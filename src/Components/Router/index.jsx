@@ -15,6 +15,7 @@ const ShowBlog = lazy(() => import('../../Pages/Blogs/ShowBlog'));
 const New = lazy(() => import('../../Pages/News/Index'))
 const Workshops = lazy(() => import("../../Pages/EventWorkShop/Index"))
 const UaeInternationalDesk = lazy(() => import('../../Pages/UaeInternationalDesk/Index'))
+const UsInternationalDesk = lazy(() => import('../../Pages/UaeInternationalDesk/UsInternationalDesk'))
 
 const Index = () => {
   return (
@@ -40,6 +41,7 @@ const Index = () => {
                 <Route path="/news" element={<New />} />
                 <Route path="/workshops" element={<Workshops />} />
                 <Route path="/uaeinternationaldesk" element={<UaeInternationalDesk/>} />
+                <Route path="/usinternationaldesk" element={<UsInternationalDesk/>} />
                 </Route>
                 <Route path="*" element={<PageNotFound />} />
             </Routes>

@@ -33,7 +33,7 @@ const TrustedBrands = () => {
                 src={logo}
                 alt={`Brand ${index + 1}`}
                 loading="lazy"
-                className="w-full object-contain opacity-80 hover:opacity-100 transition duration-300 h-[20%]"
+                className="w-full object-contain  transition duration-300 h-[20%]"
               />
             </div>
           ))}

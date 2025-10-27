@@ -250,7 +250,6 @@ const Header = () => {
     { name: "Events & Workshops", to: "/workshops" },
     { name: "Blog" , to: "/blog"},
     { name: "News", to: "/news" },
-    { name: "US International Desk", to: "/uaeinternationaldesk" },
   ];
 
   const toggleMenu = () => setIsOpen(!isOpen);

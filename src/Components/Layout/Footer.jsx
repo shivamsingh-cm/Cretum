@@ -30,11 +30,11 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4 text-sm">QUICK LINKS</h3>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="hover:text-white">About Us</a></li>
+              <li><a href="/about" className="hover:text-white">About Us</a></li>
               <li><a href="#" className="hover:text-white">Services</a></li>
               <li><a href="#" className="hover:text-white">Resources</a></li>
-              <li><a href="#" className="hover:text-white">Contact</a></li>
-              <li><a href="#" className="hover:text-white">Careers</a></li>
+              <li><a href="contact" className="hover:text-white">Contact</a></li>
+              <li><a href="/career" className="hover:text-white">Careers</a></li>
             </ul>
           </div>
 
@@ -44,8 +44,8 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               <li><a href="#" className="hover:text-white">GST Services</a></li>
               <li><a href="#" className="hover:text-white">Startup Consulting</a></li>
-              <li><a href="#" className="hover:text-white">CFO Services</a></li>
-              <li><a href="#" className="hover:text-white">International Services</a></li>
+              <li><a href="/usinternationaldesk" className="hover:text-white">US International Desk</a></li>
+              <li><a href="/uaeinternationaldesk" className="hover:text-white">UAE International Desk</a></li>
             </ul>
           </div>
 

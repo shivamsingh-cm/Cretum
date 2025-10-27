@@ -1,5 +1,5 @@
 import React from 'react'
-import HeroSection from './Components/HeroSection'
+import HeroSection from './HeroSectionUs'
 import FAQSection from '../Home/Component/FaqSection'
 import CtaBanner from './Components/CtaBanner'
 import Resources from '../Home/Component/Resources'
@@ -7,10 +7,10 @@ import TrustedBrands from '../Home/Component/TrustedBrands'
 import UaeDeskSection from './Components/UaeDeskSection'
 import HowWeWork from './Components/HowWeWork'
 import OurService from './Components/OurService'
-function Index() {
+function UsInternationalDesk() {
   return (
     <>
-        <HeroSection />
+        <HeroSection/>
         <TrustedBrands/>
         <UaeDeskSection/>
         <OurService />
@@ -18,9 +18,8 @@ function Index() {
         <Resources/>
         <FAQSection />
         <CtaBanner/>
-       
     </>
   )
 }
 
-export default Index
+export default UsInternationalDesk

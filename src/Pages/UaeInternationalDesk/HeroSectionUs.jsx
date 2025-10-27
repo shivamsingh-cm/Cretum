@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from "react";
-import MapBase from '../../../assets/mapbase.png';
+import MapBase from '../../assets/mapbase.png';
 import { MapPin } from "lucide-react";
-import Modal from "../../../Components/ScheduleCall/Modal";
-import ScheduleCallForm from "../../../Components/ScheduleCall/ScheduleCallForm";
+import Modal from "../../Components/ScheduleCall/Modal";
+import ScheduleCallForm from "../../Components/ScheduleCall/ScheduleCallForm";
 
 const locations = [
   { name: "New York", top: 25, left: 20 }, // percentages as numbers
@@ -59,11 +59,11 @@ export default function HeroSection() {
         {/* Header Section */}
         <header className="text-center mb-6 sm:mb-10 mt-16">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-            Your Gateway to UAE Business Setup <br /> & Tax Compliance
+            Your Trusted Partner for US <br /> Accounting & Compliance
           </h1>
           <p className="text-white text-base sm:text-lg md:text-xl max-w-3xl mx-auto mt-4">
-            From entity formation to tax filing — we simplify your UAE business 
-            expansion with expert regulatory, tax, and audit support.
+            From fund accounting to audit support — we provide comprehensive finance
+            and accounting solutions tailored for businesses expanding to the US.
           </p>
         </header>
 

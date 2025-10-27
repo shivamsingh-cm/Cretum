@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import BackgroundImage from "../../../assets/HomePagec.png";
+import BackgroundImage from "../../../assets/HomePagec.webp";
 import Modal from "../../../Components/ScheduleCall/Modal";
 import ScheduleCallForm from "../../../Components/ScheduleCall/ScheduleCallForm";
 
