@@ -105,24 +105,22 @@ const FilterSearch = () => {
           {/* Sidebar / Filter Section (Left Column on Desktop)  */}
           <aside className="lg:col-span-4 xl:col-span-3 flex flex-col gap-8">
             {/* Search Input */}
-            <div>
-              <label htmlFor="search-blogs" className="block text-xl font-semibold text-gray-100 mb-4">
-                Search Blogs
-              </label>
-              <div className="flex rounded-lg overflow-hidden border border-purple-700/50 focus-within:ring-2 focus-within:ring-purple-500">
-                <input
-                  type="text"
-                  id="search-blogs"
-                  placeholder="Search Blogs"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                  className="flex-grow p-3 bg-purple-900/40 text-gray-100 placeholder-gray-400 focus:outline-none"
-                />
-                <button className="bg-purple-700 hover:bg-purple-600 text-white font-medium py-3 px-6 transition duration-300">
-                  Search
-                </button>
-              </div>
+            <div className="flex flex-col sm:flex-row rounded-lg overflow-hidden border border-purple-700/50 focus-within:ring-2 focus-within:ring-purple-500">
+              <input
+                type="text"
+                id="search-blogs"
+                placeholder="Search Blogs"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full p-3 bg-purple-900/40 text-gray-100 placeholder-gray-400 focus:outline-none"
+              />
+              <button
+                className="bg-purple-700 hover:bg-purple-600 text-white font-medium py-3 px-6 transition duration-300 w-full sm:w-auto"
+              >
+                Search
+              </button>
             </div>
+
 
             {/* Filters Section */}
             <div className="mt-4">

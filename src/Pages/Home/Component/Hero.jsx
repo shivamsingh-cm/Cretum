@@ -13,17 +13,33 @@ const Hero = () => {
         backgroundImage: `url(${BackgroundImage})`,
       }}
     >
+      
       {/* Overlay Gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-backgroundPrimary via-backgroundPrimary/80 to-transparent"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl pl-4 md:pl-12 lg:pl-20 pr-4 text-start text-white">
         {/* Small Tag */}
-        <div className="mb-6">
+        {/* <div className="mb-6">
           <span className=" bg-white/10 text-sm md:text-base text-gray-200 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1">
             Trusted By 500+ Businesses • Led by Former Big 4 Experts Since 2017
           </span>
+        </div> */}
+
+        <div className="mb-6">
+          {/* Mobile Version */}
+          <span className="bg-white/10 text-sm text-gray-200 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1 block sm:hidden text-center">
+            Trusted By 500+ Businesses •
+            <br />
+            Led by Former Big 4 Experts
+          </span>
+
+          {/* Desktop & Tablet Version */}
+          <span className="hidden sm:inline-block bg-white/10 text-sm md:text-base text-gray-200 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1">
+            Trusted By 500+ Businesses • Led by Former Big 4 Experts Since 2017
+          </span>
         </div>
+
 
         {/* Main Heading */}
         <h1 className="text-3xl md:text-5xl font-bold leading-tight mb-6">

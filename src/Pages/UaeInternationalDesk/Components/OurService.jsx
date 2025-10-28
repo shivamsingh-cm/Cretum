@@ -5,44 +5,30 @@ import RandomImage from '../../../assets/randomblog.jpg'
 const services = [
   {
     id: 1,
-    title: "VAT & Corporate Tax Compliance",
+    title: "Startup Services ",
     description:
-      "Ensure accurate VAT registration, filing, and refunds while adhering to UAE’s tax laws.",
+      "If you’re a Startup, you already know the complexities of launching, managing, and scaling your business.",
     image: RandomImage,
   },
   {
     id: 2,
-    title: "Accounting & Bookkeeping",
+    title: "Customs Services",
     description:
-      "Comprehensive accounting support tailored to your business needs and UAE regulations.",
+      "Cretum Advisory provides specialized customs advisory services to help businesses manage customs regulations, mitigate risks, and ensure smooth import/export operations",
     image: RandomImage,
   },
   {
     id: 3,
-    title: "Business Setup Advisory",
+    title: "Income Tax Services",
     description:
-      "Get expert guidance to establish your business seamlessly in the UAE market.",
+      "Income tax is imposed on individuals or entities (taxpayers) based on income or profits earned (taxable income).",
     image: RandomImage,
   },
   {
     id: 4,
-    title: "Audit & Assurance",
+    title: "CFO Services",
     description:
-      "Reliable audit services ensuring transparency, compliance, and trustworthiness.",
-    image: RandomImage,
-  },
-  {
-    id: 5,
-    title: "Payroll & HR Solutions",
-    description:
-      "Streamline your payroll processes and HR operations with our tailored solutions.",
-    image: RandomImage,
-  },
-  {
-    id: 6,
-    title: "Corporate Advisory",
-    description:
-      "Strategic insights and advisory to help your business grow and stay compliant.",
+      "CFO services refer to the suite of financial management services provided by a Chief Financial Officer (CFO) to organizations. ",
     image: RandomImage,
   },
 ];

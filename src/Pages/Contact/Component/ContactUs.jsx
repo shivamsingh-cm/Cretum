@@ -1,5 +1,5 @@
 import React from "react";
-import { Mail, Phone, Facebook, Instagram, X, Youtube } from "lucide-react";
+import { Mail, Phone, Facebook, Instagram, Twitter, Youtube, Linkedin } from "lucide-react";
 
 const ContactUs = () => {
   return (
@@ -101,19 +101,24 @@ const ContactUs = () => {
           {/* Social Media */}
           <div className="bg-[#1e1630] rounded-2xl p-6">
             <h4 className="text-sm text-gray-400 mb-3">SOCIAL MEDIA</h4>
-            <div className="flex gap-4">
-              <a href="#" className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition">
-                <Facebook size={18} />
-              </a>
-              <a href="#" className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition">
-                <Instagram size={18} />
-              </a>
-              <a href="#" className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition">
-                <X size={18} />
-              </a>
-              <a href="#" className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition">
-                <Youtube size={18} />
-              </a>
+            <div className="flex space-x-4">
+              {[
+                { Icon: Facebook, href: "https://www.facebook.com/cretumadvisory1" },
+                { Icon: Linkedin, href: "https://www.linkedin.com/company/cretumadvisory/" },
+                { Icon: Instagram, href: "https://www.instagram.com/cretumadvisory/" },
+                { Icon: Twitter, href: "https://x.com/AdvisoryCretum" },
+                { Icon: Youtube, href: "https://www.youtube.com/@CretumAdvisory" },
+              ].map(({ Icon, href }) => (
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#A164FF] transition-colors duration-200"
+                >
+                  <Icon size={18} />
+                </a>
+              ))}
             </div>
           </div>
         </div>

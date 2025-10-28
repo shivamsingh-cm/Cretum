@@ -1,6 +1,11 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const CtaBanner = () => {
+  const navigate = useNavigate();
+  const viewOpportunitiesClick = ()=>{
+    navigate('/alljoblist')
+  }
   return (
     <section className="relative bg-buttonBackground overflow-hidden text-center text-white py-20 px-6 md:px-12">
       
@@ -23,6 +28,7 @@ const CtaBanner = () => {
           Write to us at&nbsp;<span className="underline">careers@cretumadvisory.com</span>&nbsp;to explore opportunities at Uniqus and elevate your professional journey.
         </p>
         <button 
+        onClick={viewOpportunitiesClick}
           className="bg-white text-black font-medium px-6 py-2 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-sm"
         >
           View Opportunities

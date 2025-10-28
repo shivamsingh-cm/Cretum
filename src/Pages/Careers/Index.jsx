@@ -2,7 +2,7 @@ import React from 'react'
 import HeroSection from './Components/HeroSection'
 import LeadershipSection from './Components/Leaderships'
 import LifeSection from './Components/LifeSection'
-import CareerBackground from '../../assets/careerbg.png'
+import CareerBackground from '../../assets/careerbg.webp'
 import DrivesUsSection from './Components/DrivesUsSection'
 import CtaBanner from '../Careers/Components/CtaBanner'
 

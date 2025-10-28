@@ -4,27 +4,27 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const services = [
   {
     id: 1,
-    title: "Accounting & Reporting Consulting",
+    title: "Startup Services ",
     description:
-      "Our ARC practice partners with finance functions to extend your team’s capabilities. Drawing from a global talent pool with expertise in both finance and technology, we provide the necessary skills and resources to help you execute your plans Our Tech Consulting practice focuses on solving business problems holistically by integrating our deep domain knowledgeOur Tech Consulting practice focuses on solving business.",
+      "If you’re a Startup, you already know the complexities of launching, managing, and scaling  your business. Cretum Advisory is one of the best financial consulting companies that provides strategic insights, financial consulting, and operational support to help you run your business smoothly If you are looking for Startup Consulting"
   },
   {
     id: 2,
-    title: "Governance, Risk & Compliance",
+    title: "Customs Services ",
     description:
-      "We assist clients to navigate the complex governance, risk, and compliance landscape. We design and implement effective GRC frameworks,Our Tech Consulting practice focuses on solving business problems holistically by integrating our deep domain knowledgeOur Tech Consulting practice focuses on solving business problems holistically by integrating our deep domain knowledge improving risk resilience and operational effectiveness.",
+      " Cretum Advisory provides specialized customs advisory services to help businesses manage customs regulations, mitigate risks, and ensure smooth import/export operations. Our automation tools enable BRC verification, AI-driven document processing, automated duty calculations, real-time shipment tracking, and digital compliance checks",
   },
   {
     id: 3,
-    title: "Sustainability & Climate Consulting",
+    title: "Income Tax Services ",
     description:
-      "Our SCC practice helps clients in Our Tech Consulting practice focuses on solving business problems holistically by integrating our deep domain knowledgeOur Tech Consulting practice focuses on solving business problems holistically by integrating our deep domain knowledge Climate Action Planning, Carbon Accounting, and ESG. We help organizations achieve global sustainability goals while meeting compliance requirements efficiently.",
+      "Income tax is imposed on individuals or entities (taxpayers) based on income or profits earned (taxable income). It is calculated as the product of the tax rate and taxable income. Tax rates vary depending on the taxpayer type and income nature. Cretum Advisory provides income tax services to help businesses stay compliant while maximizing tax efficiency.  ",
   },
   {
     id: 4,
-    title: "Tech Consulting",
+    title: "CFO Services",
     description:
-      "Our Tech Consulting practice focuses on solving business problems holistically by integrating our deep domain knowledge Our Tech Consulting practice focuses on solving business problems holistically by integrating our deep domain knowledgeOur Tech Consulting practice focuses on solving business problems holistically by integrating our deep domain knowledge in finance, risk, and sustainability with advanced technology knowledge.",
+      "CFO services refer to the suite of financial management services provided by a Chief Financial Officer (CFO) to organizations. These services help improve financial performance, manage risk, and achieve strategic goals. CFO Advisory services can be provided full-time, part-time, or on a project basis, depending on the organization’s needs and budget.",
   },
 ];
 

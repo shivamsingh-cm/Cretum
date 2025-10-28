@@ -34,7 +34,7 @@
 // export default HeroSection
 
 import React from 'react'
-import BackgroundImage from '../../../assets/CarrerHero.png'
+import BackgroundImage from '../../../assets/CarrerHero.webp'
 
 function HeroSection() {
   return (

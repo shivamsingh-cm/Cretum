@@ -12,10 +12,13 @@ const Careers = lazy(() => import('../../Pages/Careers/Index'));
 const AboutUs = lazy(() => import('../../Pages/AboutUs/Index'));
 const Blog = lazy(() => import('../../Pages/Blogs/index'));
 const ShowBlog = lazy(() => import('../../Pages/Blogs/ShowBlog'));
-const New = lazy(() => import('../../Pages/News/Index'))
-const Workshops = lazy(() => import("../../Pages/EventWorkShop/Index"))
-const UaeInternationalDesk = lazy(() => import('../../Pages/UaeInternationalDesk/Index'))
-const UsInternationalDesk = lazy(() => import('../../Pages/UaeInternationalDesk/UsInternationalDesk'))
+const New = lazy(() => import('../../Pages/News/Index'));
+const Workshops = lazy(() => import("../../Pages/EventWorkShop/Index"));
+const UaeInternationalDesk = lazy(() => import('../../Pages/UaeInternationalDesk/Index'));
+const UsInternationalDesk = lazy(() => import('../../Pages/UaeInternationalDesk/UsInternationalDesk'));
+const TermsOfUse = lazy(() => import('../../Pages/TermsOfUse'));
+const AllJobList = lazy(() => import('../../Pages/Careers/AllJobList/Index'));
+const JobDetailsPage = lazy(() => import('../../Pages/Careers/AllJobList/Components/JobDetails'))
 
 const Index = () => {
   return (
@@ -42,6 +45,9 @@ const Index = () => {
                 <Route path="/workshops" element={<Workshops />} />
                 <Route path="/uaeinternationaldesk" element={<UaeInternationalDesk/>} />
                 <Route path="/usinternationaldesk" element={<UsInternationalDesk/>} />
+                <Route path='/termsofuse' element={<TermsOfUse/>} />
+                <Route path="/alljoblist" element={<AllJobList/>} />
+                <Route path="/job/:jobId" element={<JobDetailsPage/>} />
                 </Route>
                 <Route path="*" element={<PageNotFound />} />
             </Routes>

@@ -2,8 +2,13 @@ import React from "react";
 import advisor1 from "../../../assets/trustedleading1.png";
 import advisor2 from "../../../assets/trustedleading2.png";
 import { CheckCircle2 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const TrustedAdvisors = () => {
+  const navigate = useNavigate();
+  const handleReadMoreClick = ()=>{
+    navigate('/about')
+  }
   return (
     <section className="bg-backgroundPrimary text-white py-12 sm:py-16 px-4 sm:px-6 md:px-12 lg:px-20">
       {/* Heading */}
@@ -106,7 +111,9 @@ const TrustedAdvisors = () => {
           Tax & GST Advisory, Litigation, Audit, CFO Services, Accounting &
           Financial Advisory, and M&A/Transaction Advisory.
         </p>
-        <button className="border border-white/30 hover:bg-white hover:text-black px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm transition-all duration-300">
+        <button
+          onClick={handleReadMoreClick}
+          className="border border-white/30 hover:bg-white hover:text-black px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm transition-all duration-300">
           Read More
         </button>
       </div>

@@ -42,7 +42,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import AboutBackground from '../../../assets/careerbg.png';
+import AboutBackground from '../../../assets/careerbg.webp';
 
 function HeroSection() {
   const staticText = "Simplifying Growth Through";
