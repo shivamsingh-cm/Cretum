@@ -59,28 +59,28 @@ const NewsSection = () => {
   return (
     <section className="bg-backgroundPrimary min-h-screen p-6 sm:p-10 md:p-14 lg:p-16">
       <div className="max-w-7xl mx-auto ">
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8">All News</h2>
+        <h2 className="text-xl sm:text-2xl font-medium text-white mb-8">All News</h2>
 
         <div className="flex flex-col space-y-6">
           {currentArticles.map((article) => (
-            <div key={article.id} className="bg-backgroundSecondary border border-backgroundSecondary rounded-2xl shadow-md flex flex-col md:flex-row h-[330px] overflow-hidden">
+            <div key={article.id} className="bg-backgroundSecondary border border-backgroundSecondary rounded-2xl shadow-md flex flex-col md:flex-row h-62 overflow-hidden">
               
               {/* Image on left */}
-              <div className="md:w-1/3 h-[180px] md:h-auto flex-shrink-0">
+              <div className="md:w-1/3 h-[120px] md:h-auto flex-shrink-0">
                 <img
                   src={article.imageUrl}
                   alt={article.title}
-                  className="w-full h-full object-cover p-4 rounded-lg"
+                  className="w-full h-60 object-cover p-4 rounded-lg"
                 />
               </div>
 
               {/* Content on right */}
               <div className="md:w-2/3 p-4 sm:p-6 flex flex-col justify-between">
                 <div>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 leading-snug">
+                  <h3 className="text-xl sm:text-2xl font-medium text-white mb-2 leading-snug">
                     {article.title}
                   </h3>
-                  <p className="text-purple-300 text-sm sm:text-base mb-2">
+                  <p className="text-purple-300 font-normal text-sm sm:text-base mb-2">
                     {article.description}
                   </p>
                 </div>

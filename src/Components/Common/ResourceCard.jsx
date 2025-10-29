@@ -10,7 +10,7 @@ const ResourceCard = ({ image, title }) => {
         loading="lazy"
       />
       <div className="p-4">
-        <h3 className="text-white text-base md:text-lg font-medium leading-snug">
+        <h3 className="text-white text-xl font-normal md:text-2xl  leading-snug">
           {title}
         </h3>
       </div>

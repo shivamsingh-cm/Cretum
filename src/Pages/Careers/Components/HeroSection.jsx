@@ -48,10 +48,10 @@ function HeroSection() {
 
 
       <div className="relative z-10 flex flex-col items-center justify-start pt-20 sm:pt-24 md:pt-28 lg:pt-28 px-4 max-w-7xl mx-auto text-center ">
-        <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-4 whitespace-normal">
+        <h1 className="font-medium text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-4 whitespace-normal">
           Together, We Build What’s Next
         </h1>
-        <p className="text-white/90 text-base sm:text-lg md:text-xl leading-relaxed max-w-prose">
+        <p className="text-white/90 text-base sm:text-lg md:text-lg font-normal leading-relaxed max-w-prose">
           At Cretum Advisory, we don’t just advise — we help shape futures. Businesses come 
           to us with ambition. We bring the strategy, creativity, and courage to make it real.
           That story begins with our people.

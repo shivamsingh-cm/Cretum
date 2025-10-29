@@ -12,7 +12,7 @@ import Services from './Component/Services'
 
 function index() {
   return (
-    <>
+    <div className='overflow-x-hidden'>
         <Hero />
         <TrustedBrands />
         <TrustedAdvisors />
@@ -23,7 +23,7 @@ function index() {
         <Resources />
         <FAQSection />
         <CtaBanner />
-    </>
+    </div>
   )
 }
 

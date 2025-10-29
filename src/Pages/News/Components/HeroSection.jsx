@@ -39,16 +39,16 @@ const HeroSection = () => {
         
         {/* Header Section */}
         <header className="text-center mb-6 sm:mb-10 mt-16 ">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-white">
             Stay Updated With Cretum <br/> Advisory
           </h1>
-          <p className="text-white text-base sm:text-lg md:text-xl max-w-3xl mx-auto mt-4">
+          <p className="text-white font-normal text-base sm:text-sm md:text-lg max-w-3xl mx-auto mt-4">
             Discover the latest updates, announcements, and insights shaping our journey and the businesses we serve.
           </p>
         </header>
 
         {/* Recent News Heading */}
-        <h2 className="text-2xl sm:text-3xl font-bold text-white mb-6 sm:mb-10">
+        <h2 className="text-xl sm:text-2xl font-medium text-white mb-6 sm:mb-10">
           Recent News
         </h2>
 
@@ -63,10 +63,10 @@ const HeroSection = () => {
                 alt={article.title}
                 className="w-full h-48 sm:h-60 lg:h-64 object-cover rounded-2xl mb-4 sm:mb-6 shadow-md"
               />
-              <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 leading-snug">
+              <h3 className="text-xl sm:text-2xl font-medium text-white mb-2 leading-snug">
                 {article.title}
               </h3>
-              <p className="text-purple-300 text-sm sm:text-base mb-3 flex-grow">
+              <p className="text-purple-300 text-sm sm:text-base font-normal mb-3 flex-grow">
                 {article.description}
               </p>
               <ReadMoreLink href={article.link} />

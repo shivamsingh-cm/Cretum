@@ -202,7 +202,7 @@ const EventsList = () => {
     <section className="bg-backgroundPrimary text-white py-16 px-6 md:px-12 lg:px-20 space-y-20">
       {/* Upcoming Events */}
       <div>
-        <h2 className="text-2xl md:text-3xl font-semibold mb-10">
+        <h2 className="text-xl md:text-2xl font-medium mb-10">
           Upcoming Events
         </h2>
 
@@ -218,14 +218,14 @@ const EventsList = () => {
                 className="w-full h-56 object-cover"
               />
               <div className="p-6">
-                <p className="text-sm text-[#a793f5] mb-1">
+                <p className="text-lg font-normal text-[#a793f5] mb-1">
                   {event.date} • {event.location}
                 </p>
-                <h3 className="text-xl font-semibold mb-2">{event.title}</h3>
-                <p className="text-gray-300 text-sm mb-5 line-clamp-3">
+                <h3 className="text-xl font-medium mb-2">{event.title}</h3>
+                <p className="text-gray-300  mb-5 line-clamp-3 text-base font-normal">
                   {event.discription}
                 </p>
-                <button className="bg-white text-[#1a103d] font-semibold px-5 py-2 rounded-full hover:bg-gray-200 transition">
+                <button className="bg-white text-sm font-medium text-[#1a103d]  px-5 py-2 rounded-full hover:bg-gray-200 transition">
                   {event.button}
                 </button>
               </div>
@@ -237,7 +237,7 @@ const EventsList = () => {
       {/* Past Events */}
       <div>
         <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-10 gap-4">
-          <h2 className="text-2xl md:text-3xl font-semibold">Past Events</h2>
+          <h2 className="text-xl md:text-2xl font-medium">Past Events</h2>
 
           {/* Search Bar with Button Inside */}
           <div className="relative w-full md:w-72">
@@ -264,17 +264,17 @@ const EventsList = () => {
                 className="w-full h-44 object-cover"
               />
               <div className="p-6 flex flex-col flex-grow">
-                <span className="text-xs bg-buttonBackground/10 text-buttonBackground px-3 py-1 rounded-full w-fit mb-3 font-semibold">
+                <span className="text-sm font-normal bg-buttonBackground/10 text-buttonBackground px-3 py-1 rounded-full w-fit mb-3 ">
                   {event.tag}
                 </span>
-                <p className="text-sm text-[#a793f5] mb-1">
+                <p className="text-lg font-normal text-[#a793f5] mb-1">
                   {event.date} • {event.location}
                 </p>
-                <h3 className="text-lg font-semibold mb-2">{event.title}</h3>
-                <p className="text-gray-300 text-sm mb-4 line-clamp-3">
+                <h3 className="text-xl  font-medium mb-2">{event.title}</h3>
+                <p className="text-gray-300 text-base font-normal mb-4 line-clamp-3">
                   {event.discription}
                 </p>
-                <button className="bg-white text-[#1a103d] font-semibold px-5 py-2 rounded-full hover:bg-gray-200 transition self-start">
+                <button className="bg-white text-sm text-[#1a103d] font-normal px-5 py-2 rounded-full hover:bg-gray-200 transition self-start">
                   Learn More
                 </button>
               </div>

@@ -18,19 +18,21 @@ function LeadershipSection() {
 
         {/* Right: Text Content take 50%  */}
         <div className="w-full md:w-1/2 text-white space-y-4">
-          <h6 className="text-buttonBackground text-sm font-medium">
+          <h6 className="text-buttonBackground text-base font-medium">
             Meet Our Leadership
           </h6>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium">
             Guiding Vision. Driving Impact.
           </h1>
-          <p className="text-sm sm:text-base md:text-lg text-white/90 leading-relaxed">
-            At Cretum Advisory, leadership isn’t just about titles — it’s about setting 
-            direction, inspiring people, and creating opportunities for growth. Our
-            leadership team brings together deep industry expertise, entrepreneurial
-            thinking, and a shared commitment to building a future where businesses
-            don’t just adapt, but thrive.
-          </p>
+          <div className="space-y-[24px]">
+            <p className="text-sm sm:text-base md:text-base font-normal text-white/90 leading-[150%]">
+              At Cretum Advisory, leadership isn’t just about titles — it’s about setting 
+              direction, inspiring people, and creating opportunities for growth. Our
+              leadership team brings together deep industry expertise, entrepreneurial
+              thinking, and a shared commitment to building a future where businesses
+              don’t just adapt, but thrive.
+            </p>
+          </div>
         </div>
       </div>
     </section>

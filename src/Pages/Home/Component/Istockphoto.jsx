@@ -9,7 +9,7 @@ function Istockphoto() {
         alt="Istock Background"
         loading="lazy"
         decoding="async"
-        className="w-full h-auto object-cover"
+        className="w-full h-96 object-cover"
       />
     </div>
   );

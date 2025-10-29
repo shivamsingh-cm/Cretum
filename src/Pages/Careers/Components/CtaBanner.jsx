@@ -21,11 +21,11 @@ const CtaBanner = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center space-y-6">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold leading-snug">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium leading-snug">
           Roles We’re Hiring For
         </h2>
-        <p className="text-white/90 text-base md:text-lg leading-relaxed">
-          Write to us at&nbsp;<span className="underline">careers@cretumadvisory.com</span>&nbsp;to explore opportunities at Uniqus and elevate your professional journey.
+        <p className="text-white/90 text-base md:text-base font-normal leading-relaxed">
+          Write to us at&nbsp;<span className="underline">careers@cretumadvisory.com</span>&nbsp;to explore <br/> opportunities at Uniqus and elevate your professional journey.
         </p>
         <button 
         onClick={viewOpportunitiesClick}

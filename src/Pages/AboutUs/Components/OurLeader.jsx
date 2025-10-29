@@ -36,7 +36,7 @@ const OurLeader = () => {
       <div className="max-w-7xl mx-auto">
 
         
-        <h1 className="text-xl sm:text-4xl font-extrabold text-white mb-4 sm:mb-6 lg:mb-8">
+        <h1 className="text-xl sm:text-2xl  font-medium text-white mb-4 sm:mb-6 lg:mb-8">
           Our Leadership Champions
         </h1>
 
@@ -59,33 +59,33 @@ const OurLeader = () => {
 
               {/* Text Content Section */}
               <div className="p-6 sm:p-8 flex-grow flex flex-col">
-                <h3 className="text-xl  font-bold text-white mb-2">
+                <h3 className="text-xl  font-medium text-white mb-2">
                   {leader.name}
                 </h3>
-                <p className="text-purple-300 text-md mb-6">
+                <p className="text-white/80 text-base font-normal mb-6">
                   {leader.title}
                 </p>
 
                 {/* Details List */}
-                <ul className="space-y-2 text-white/70 flex-grow">
+                <ul className="space-y-2 text-white/70 flex-grow  text-base">
                   <li>
-                    <span className="font-semibold text-white/70">Specialization:</span>{" "}
+                    <span className="font-bold text-white/70">Specialization:</span>{" "}
                     {leader.specializations.join(", ")}
                   </li>
                   <li>
-                    <span className="font-semibold text-white/70">Experience:</span>{" "}
+                    <span className="font-bold text-white/70">Experience:</span>{" "}
                     {leader.experience}
                   </li>
                   <li>
-                    <span className="font-semibold text-white/70">Key Clients:</span>{" "}
+                    <span className="font-bold text-white/70">Key Clients:</span>{" "}
                     {leader.keyClients}
                   </li>
                   <li>
-                    <span className="font-semibold text-white/70">Qualification:</span>{" "}
+                    <span className="font-bold text-white/70">Qualification:</span>{" "}
                     {leader.qualification}
                   </li>
                   <li>
-                    <span className="font-semibold text-white/70">Focus:</span>{" "}
+                    <span className="font-bold text-white/70">Focus:</span>{" "}
                     {leader.focus}
                   </li>
                 </ul>

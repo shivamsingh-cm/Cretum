@@ -18,13 +18,13 @@ const CtaBanner = () => {
 
       {/* Content */}
       <div className="relative z-10 max-w-3xl mx-auto">
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 leading-snug">
+        <h2 className="text-3xl md:text-4xl lg:text-5xl font-medium mb-6 leading-snug ">
           Join hundreds of SME’s & <br className="hidden md:block" />
           grow fast with Cretum
         </h2>
         <button 
           onClick={()=> setIsModalOpen(true)}
-          className="bg-white text-black font-medium px-6 py-2 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-sm">
+          className="bg-white text-black text-base font-medium px-6 py-2 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-sm">
           Schedule a Call
         </button>
       </div>

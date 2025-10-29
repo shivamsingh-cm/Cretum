@@ -101,18 +101,18 @@ useEffect(() => {
 
 
   return (
-    <section className="w-full bg-backgroundPrimary">
+    <section className="w-full bg-backgroundPrimary ">
       
       {/* Text Content */}
-      <div className="flex flex-col justify-center items-center text-center text-white px-4 sm:px-6 lg:px-12 max-w-5xl mx-auto py-16 md:py-20">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+      <div className="flex flex-col justify-center items-center text-center text-white px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto py-16 md:py-20">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-4 mt-10">
           <span>{staticDisplayed}</span>
           <span className="block text-buttonBackground mt-2">
             {dynamicDisplayed}
             <span className="animate-pulse inline-block w-1 bg-white ml-1 align-middle"></span>
           </span>
         </h1>
-        <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 leading-relaxed max-w-3xl">
+        <p className="text-sm sm:text-base md:text-lg lg:text-lg font-normal text-white/90 leading-relaxed max-w-2xl">
           At Cretum Advisory, we believe that financial and regulatory complexities shouldn’t
           hold back innovation. Founded in 2017, we’ve spent the last eight years helping
           startups, SMEs, and large enterprises navigate India’s fast-evolving tax and financial

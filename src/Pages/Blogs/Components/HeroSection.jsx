@@ -23,20 +23,20 @@ const HeroSection = () => {
 
   return (
   
-    <div className="min-h-screen bg-backgroundPrimary text-white font-sans p-6 sm:p-10 md:p-14 lg:p-16">
+    <div className="min-h-screen bg-backgroundPrimary text-white py-16 px-4 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto">
 
         {/* Section Header  */}
-        <header className="text-center mb-16 sm:mb-20 mt-10">
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4">
+        <header className="text-center mb-16 sm:mb-20 mt-10 ">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white mb-4">
             Blogs & Articles
           </h1>
-          <p className="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-lg font-normal text-gray-300 max-w-xl mx-auto">
             Subscribe to learn about new product features, the latest in technology, solutions, and updates.
           </p>
         </header>
         
-        <p className="text-xl sm:text-2xl font-semibold text-white mb-4 sm:mb-6">
+        <p className="text-xl sm:text-2xl font-medium text-white mb-4 sm:mb-6">
           Recent blog posts
         </p>
 
@@ -63,18 +63,18 @@ const HeroSection = () => {
             <div className="w-full lg:w-2/3 flex flex-col justify-center py-2">
               
               {/* Featured Tag */}
-              <span className="inline-flex items-center rounded-full bg-buttonBackground px-3 py-1 text-xs font-medium text-purple-200 w-fit mb-4">
+              <span className="inline-flex text-sm font-normal items-center rounded-full bg-buttonBackground px-3 py-1  text-purple-200 w-fit mb-4">
                 {featuredPost.category}
               </span>
 
               {/* Author and Date */}
-              <p className="text-sm sm:text-base text-purple-300 mb-3">
-                <span className="font-semibold">{featuredPost.author}</span> - {featuredPost.date}
+              <p className="text-base sm:text-lg text-purple-300 mb-3">
+                <span className="font-normal">{featuredPost.author}</span> - {featuredPost.date}
               </p>
 
               {/* Title and Icon */}
               <div className="flex items-start justify-between mb-4">
-                <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-50 leading-snug transition duration-300 group-hover:text-purple-400">
+                <h2 className="text-xl sm:text-2xl lg:text-3xl font-medium text-gray-50 leading-snug transition duration-300 group-hover:text-purple-400">
                   {featuredPost.title}
                 </h2>
                 {/* External Link Icon */}
@@ -82,7 +82,7 @@ const HeroSection = () => {
               </div>
 
               {/* Summary */}
-              <p className="text-base sm:text-lg text-gray-300">
+              <p className="text-lg sm:text-xl font-normal text-gray-300">
                 {featuredPost.summary}
               </p>
             </div>

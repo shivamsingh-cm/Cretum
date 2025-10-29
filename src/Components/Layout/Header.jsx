@@ -273,7 +273,9 @@ const Header = () => {
     <header className="fixed top-0 left-0 w-full bg-backgroundPrimary text-white z-50 shadow-lg">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
         {/* Logo */}
-        <div className="flex items-center space-x-2">
+        <div
+          onClick={()=> navigate('/')} 
+         className="flex items-center space-x-2 hover:cursor-pointer">
           <img src={Logo} alt="Logo" className="" />
         </div>
 

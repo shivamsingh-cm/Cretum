@@ -96,7 +96,7 @@ const FilterSearch = () => {
       <div className="max-w-7xl mx-auto">
 
         {/* Page Title */}
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-medium text-white mb-8 sm:mb-10">
+        <h1 className="text-lg sm:text-xl lg:text-2xl font-medium text-white mb-8 sm:mb-10">
           All blog posts
         </h1>
 
@@ -125,10 +125,10 @@ const FilterSearch = () => {
             {/* Filters Section */}
             <div className="mt-4">
               <div className="flex justify-between items-center mb-4">
-                <span className="text-xl font-semibold text-gray-100">Filters</span>
+                <span className="text-base font-normal text-gray-100">Filters</span>
                 <button
                   onClick={handleClearAllFilters}
-                  className="text-purple-400 hover:text-purple-300 text-sm font-medium transition duration-200"
+                  className="text-purple-400 hover:text-purple-300 text-sm font-normal transition duration-200"
                 >
                   Clear All
                 </button>
@@ -153,7 +153,7 @@ const FilterSearch = () => {
 
             {/* Category Filter */}
             <div>
-              <span className="text-xl font-semibold text-gray-100 mb-4 block">Category</span>
+              <span className="text-base font-normal text-gray-100 mb-4 block">Category</span>
               <div className="space-y-3 max-h-64 overflow-y-auto pr-2 custom-scrollbar">
                 {/* Custom scrollbar class is assumed for aesthetics in dark mode */}
                 {availableCategories.map((category) => (
@@ -165,7 +165,7 @@ const FilterSearch = () => {
                       onChange={() => handleCategoryChange(category)}
                       className="form-checkbox h-5 w-5 text-purple-600 bg-purple-900/50 border-purple-700 rounded focus:ring-purple-500"
                     />
-                    <label htmlFor={`category-${category}`} className="ml-3 text-lg text-gray-200 cursor-pointer">
+                    <label htmlFor={`category-${category}`} className="ml-3 text-sm font-normal text-gray-200 cursor-pointer">
                       {category}
                     </label>
                   </div>
@@ -200,15 +200,15 @@ const FilterSearch = () => {
                         {post?.tags?.map((tag) => (
                           <span
                             key={tag}
-                            className="inline-flex items-center rounded-full bg-purple-600/50 px-3 py-1 text-xs font-medium text-purple-200"
+                            className="inline-flex items-center rounded-full bg-purple-600/50 px-3 py-1 text-sm font-normal text-purple-200"
                           >
                             {tag}
                           </span>
                         ))}
                       </div>
 
-                      <p className="text-sm sm:text-base text-purple-300 mb-2">
-                        <span className="font-semibold">{post.author}</span> - {post.date}
+                      <p className="text-sm sm:text-base md:text-lg font-normal text-purple-300 mb-2">
+                        <span >{post.author}</span> - {post.date}
                       </p>
 
                       <div className="flex items-start justify-between mb-3">
@@ -218,7 +218,7 @@ const FilterSearch = () => {
                         <ArrowUpRight className="ml-4 w-5 h-5 sm:w-6 sm:h-6 text-purple-400 flex-shrink-0 opacity-80 group-hover:opacity-100 transition duration-300" />
                       </div>
 
-                      <p className="text-base sm:text-lg text-gray-300 flex-grow">
+                      <p className="text-base sm:text-base font-normal text-gray-300 flex-grow">
                         {post.summary}
                       </p>
                     </div>

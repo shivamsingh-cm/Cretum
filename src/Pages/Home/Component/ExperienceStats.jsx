@@ -33,13 +33,13 @@ const ExperienceStats = () => {
     >
       {/* Heading */}
       <div className="text-center mb-12">
-        <h2 className="text-xl md:text-2xl font-semibold">
+        <h2 className="text-xl md:text-4xl font-semibold">
           Driven by Experience. Backed by Trust.
         </h2>
       </div>
 
       {/* Stats */}
-      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-12 text-center border-y border-white/10 py-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-12 text-center border-y border-white/10 py-10">
         {stats.map((item, index) => (
           <StatCard
             key={index}

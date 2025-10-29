@@ -11,7 +11,7 @@ const FtBanner = () => {
       <div className="relative z-10 text-center max-w-4xl mx-auto py-10">
         
         {/* Title (Slightly reduced bottom margin since the curve is gone) */}
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight mb-10 sm:mb-12">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium text-white leading-tight mb-10 sm:mb-12">
           Subscribe to learn about new product features & updates
         </h1>
 
@@ -26,16 +26,16 @@ const FtBanner = () => {
             type="email"
             placeholder="Enter your email"
             // Simplified background/border for a cleaner look
-            className="w-full sm:max-w-md p-4 bg-purple-700/60 border border-transparent rounded-xl text-white placeholder-purple-200
+            className="w-full sm:max-w-md p-4  border-transparent rounded-full text-black 
                        focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition duration-300
                        text-base sm:text-lg shadow-inner"
             aria-label="Enter your email for subscription"
           />
           {/* Subscribe Button */}
           <button
-            className="w-full sm:w-auto px-8 py-4 bg-white text-purple-700 font-bold rounded-xl shadow-lg
+            className="w-full sm:w-auto px-8 py-4 bg-white text-purple-700  rounded-full shadow-lg
                        hover:bg-gray-100 hover:text-purple-800 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-purple-600
-                       transition duration-300 text-base sm:text-lg"
+                       transition duration-300 text-base font-medium"
           >
             Subscribe
           </button>

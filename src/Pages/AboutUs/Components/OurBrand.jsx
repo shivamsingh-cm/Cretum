@@ -45,7 +45,7 @@ const OurBrand = () => {
       <div className="max-w-7xl mx-auto">
 
         {/* Section Title */}
-        <h1 className="text-xl sm:text-4xl font-extrabold text-white mb-4 sm:mb-6 lg:mb-8">
+        <h1 className="text-xl sm:text-2xl font-medium text-white mb-4 sm:mb-6 lg:mb-8">
           Our Board of Advisors
         </h1>
 
@@ -69,18 +69,18 @@ const OurBrand = () => {
 
               {/* Text Content Section */}
               <div className="p-6 sm:p-8 flex-grow flex flex-col">
-                <h3 className="text-xl  font-bold text-white mb-2">
+                <h3 className="text-xl  font-medium text-white mb-2">
                   {advisor.name}
                 </h3>
-                <p className="text-purple-300 text-md  mb-6">
+                <p className="text-white/80 text-base font-normal  mb-6">
                   {advisor.title}
                 </p>
 
                 {/* Details List */}
-                <ul className="space-y-2 text-white/80  flex-grow">
+                <ul className="space-y-2 text-white/80  text-base flex-grow">
                   {advisor.details.map((detail, index) => (
                     <li key={index}>
-                      <span className="font-semibold text-white/70">{detail.label}:</span>{" "}
+                      <span className="font-semibold text-white/80">{detail.label}:</span>{" "}
                       {detail.value}
                     </li>
                   ))}

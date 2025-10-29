@@ -9,15 +9,15 @@ const StorySection = () => {
 
         <section className="mb-20">
           <div className="flex">
-            <div className="hidden lg:block border-l-4 border-purple-500 h-24 mr-8 mt-1"></div>
+            <div className="hidden lg:block border-l-4 border-purple-500 h-28 mr-8 mt-1"></div>
             <div className="flex-1">
               
               {/* Tagline */}
-              <p className="text-sm uppercase tracking-wider text-purple-300 mb-2">
+              <p className="text-base  tracking-wider text-purple-300 mb-2">
                 Our mission is simple:
               </p>
 
-              <h1 className="text-xl sm:text-2xl lg:text-3xl font-extrabold leading-tight">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-medium leading-tight">
                 To simplify financial transactions and compliance, so 
                 businesses can focus on what truly matters — growth.
               </h1>
@@ -41,10 +41,10 @@ const StorySection = () => {
 
 
             <div className="w-full lg:w-1/2">
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-purple-400">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white">
                 Our Story
               </h2>
-              <div className="space-y-4 text-lg text-gray-300 leading-relaxed">
+              <div className="space-y-4 text-base font-normal text-gray-300 leading-relaxed">
                 <p>
                   What started as a shared vision between two professionals — CA Devan Gupta and CA Kapil Mahani — has grown into a trusted advisory firm driven by integrity, precision, and innovation.
                 </p>

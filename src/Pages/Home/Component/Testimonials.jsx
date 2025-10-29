@@ -101,10 +101,12 @@ const Testimonials = () => {
       {/* Heading */}
       <div className="text-center mb-12">
         <p className="text-purple-400 text-sm font-medium mb-2">💬 Testimonial</p>
-        <h2 className="text-2xl md:text-3xl font-semibold">
-          Don’t Just Take Our Word For It
-        </h2>
+      <h2 className="text-lg sm:text-2xl md:text-4xl font-medium leading-tight whitespace-nowrap">
+        Don’t Just Take Our Word <br/> For It
+      </h2>
+
       </div>
+
 
       {/* Carousel Container */}
       <div className="relative max-w-7xl mx-auto overflow-hidden">
@@ -119,11 +121,14 @@ const Testimonials = () => {
           {testimonials?.map((t) => (
             <div
               key={t.id}
-              className="flex-shrink-0 px-4"
+              className="flex-shrink-0 px-4 flex justify-center"
               style={{ width: `${100 / testimonials?.length}%` }}
             >
-              <TestimonialCard {...t} />
+              <div className="h-[250px] flex">
+                <TestimonialCard {...t} />
+              </div>
             </div>
+
           ))}
         </div>
 

@@ -46,7 +46,7 @@ const FAQSection = () => {
     <section className="bg-backgroundPrimary text-white py-16 px-6 md:px-12 lg:px-24">
       {/* Heading */}
       <div className="text-center mb-12">
-        <h2 className="text-2xl md:text-3xl font-semibold">
+        <h2 className="text-3xl md:text-4xl font-medium">
           Frequently Asked Questions
         </h2>
       </div>
@@ -61,7 +61,7 @@ const FAQSection = () => {
           >
             {/* Question Row open and close button  */}
             <div className="flex justify-between items-center py-3">
-              <h3 className="text-sm md:text-base font-medium text-gray-200 hover:text-white transition">
+              <h3 className="text-sm md:text-base font-normal text-gray-200 hover:text-white transition">
                 {faq.question}
               </h3>
               {openIndex === index ? (
@@ -73,7 +73,7 @@ const FAQSection = () => {
 
             {/* Answer here show  */}
             {openIndex === index && (
-              <p className="text-gray-400 text-sm md:text-base leading-relaxed mt-1">
+              <p className="text-gray-400 text-base md:text-lg font-normal leading-relaxed mt-1">
                 {faq.answer}
               </p>
             )}
