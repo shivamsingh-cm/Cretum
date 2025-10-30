@@ -19,7 +19,7 @@ const FilterSearch = () => {
     { id: 10, imageUrl: RandomImage , tags: ["Finance"], author: "Maria Garcia", date: "08 Jan 2022", title: "Global Finance Trends of 2022", summary: "An overview of major shifts in global financial markets and predictions.", link: "#" },
   ];
 
-  // State for filtering and pagination
+
   const [activeFilters, setActiveFilters] = useState(["Leadership", "Management", "Brand"]);
   const [searchTerm, setSearchTerm] = useState("");
   const [currentPage, setCurrentPage] = useState(1); // New state for current page
