@@ -309,7 +309,7 @@ const AllJobList = ({ onContactClick }) => {
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 sm:px-5 py-2.5 rounded-lg font-medium transition-all duration-200 hover:scale-105 ${
                     selectedCategory === category
-                      ? 'text-white bg-blue-600 hover:bg-blue-700 shadow-lg'
+                      ? 'text-white bg-buttonBackground hover:bg-buttonBackgroundHover shadow-lg'
                       : 'text-gray-300 bg-white/5 hover:bg-white/10 border border-white/10'
                   }`}
                 >
@@ -419,7 +419,7 @@ const AllJobList = ({ onContactClick }) => {
                 </div>
                 <button 
                   onClick={() => handleMoreInfo(job.id)}
-                  className="px-6 py-3 rounded-lg font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-all duration-300 hover:scale-105 flex items-center gap-2 shadow-lg"
+                  className="px-6 py-3 rounded-lg font-semibold text-white bg-buttonBackground hover:bg-buttonBackgroundHover transition-all duration-300 hover:scale-105 flex items-center gap-2 shadow-lg"
                 >
                   <span>Apply Now</span>
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -453,7 +453,7 @@ const AllJobList = ({ onContactClick }) => {
               <div className="flex gap-3 justify-center">
                 <button
                   onClick={clearSearch}
-                  className="px-6 py-3 rounded-lg font-semibold text-white bg-blue-600 hover:bg-blue-700 transition-colors"
+                  className="px-6 py-3 rounded-lg font-semibold text-white bg-buttonBackground hover:bg-buttonBackgroundHover transition-colors"
                 >
                   Clear Search
                 </button>
