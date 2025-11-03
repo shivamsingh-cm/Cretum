@@ -1,5 +1,6 @@
 import React from 'react';
 import LeaderImage from '../../../assets/leader.png'
+
 const StorySection = () => {
 
   return (

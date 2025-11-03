@@ -1,5 +1,9 @@
 import React from 'react';
 import LeaderImage from '../../../assets/leader.png'
+import JaiTahalani from '../../../assets/JaiTahalani.webp'
+import DevanSir from '../../../assets/DevanSir.webp'
+import AanchalMam from '../../../assets/Aanchal.png'
+import Arun from '../../../assets/Arun.png'
 const OurBrand = () => {
 
   const advisors = [
@@ -7,7 +11,7 @@ const OurBrand = () => {
       id: 1,
       name: "Aanchal Malhotra",
       title: "Strategic Advisor | Ex-Ernst & Young",
-      imageUrl: LeaderImage, 
+      imageUrl: AanchalMam, 
       details: [
         { label: "Role", value: "Mergers & Acquisitions, Investment Banking and Tech Experience: Over 13 years" },
         { label: "Clients Managed", value: "NITI Aayog, Ministry of Afghanistan, Ministry of Liberia, Honda" },
@@ -18,7 +22,7 @@ const OurBrand = () => {
       id: 2,
       name: "Jai Tahalani",
       title: "Legal Advisor",
-      imageUrl: LeaderImage,
+      imageUrl: JaiTahalani,
       details: [
         { label: "Expertise", value: "Legal Matter Advocate" },
         { label: "Role", value: "Litigation and Legal Opinion" },
@@ -31,7 +35,7 @@ const OurBrand = () => {
       id: 3,
       name: "Arun Khetan",
       title: "Foreign Trade Policy Consultant", 
-      imageUrl: LeaderImage,
+      imageUrl: Arun,
       details: [
         { label: "Role", value: "Foreign Trade Policy consultant" },
         { label: "Experience", value: "Over 24 years Clients Managed" },
@@ -58,11 +62,11 @@ const OurBrand = () => {
               className="bg-backgroundPrimaryDark/40 rounded-xl overflow-hidden shadow-xl transition duration-300 ease-in-out hover:scale-[1.01] hover:shadow-2xl flex flex-col"
             >
               {/* Image Section */}
-              <div className="relative w-full aspect-[3/2] overflow-hidden">
+              <div className="relative w-full h-80 overflow-hidden">
                 <img
                   src={advisor.imageUrl}
                   alt={`Portrait of ${advisor.name}`}
-                  className="w-full h-full object-cover rounded-t-xl"
+                  className="w-full object-cover rounded-t-xl"
                   onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/6b21a8/ffffff?text=Image+Unavailable"; }}
                 />
               </div>

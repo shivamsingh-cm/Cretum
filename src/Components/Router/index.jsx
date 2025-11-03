@@ -19,6 +19,9 @@ const UsInternationalDesk = lazy(() => import('../../Pages/UaeInternationalDesk/
 const TermsOfUse = lazy(() => import('../../Pages/TermsOfUse'));
 const AllJobList = lazy(() => import('../../Pages/Careers/AllJobList/Index'));
 const JobDetailsPage = lazy(() => import('../../Pages/Careers/AllJobList/Components/JobDetails'))
+import SingleNewsPage from '../../Pages/News/SingleNewsPage';
+const Solution = lazy(() => import('../../Pages/Solutions/Index'))
+const GstComplianceAdvisory = lazy(() => import('../../Pages/GstComplianceAdvisory/Main'))
 
 const Index = () => {
   return (
@@ -39,12 +42,18 @@ const Index = () => {
                 <Route path="/privacypolicy" element={<PrivacyPolicy/>} />
                 <Route path='/career' element={<Careers/>} />
                 <Route path="/about" element={<AboutUs/>} />
-                <Route path="/blog" element={<Blog />} />
-                <Route path='/showblog' element={<ShowBlog />} />
-                <Route path="/news" element={<New />} />
+                {/* <Route path="/blog" element={<Blog />} /> */}
+                <Route path="/blog/:pageNumber?" element={<Blog />} />
+
+                <Route path='/showblog/:id' element={<ShowBlog />} />
+                {/* <Route path="/news" element={<New />} /> */}
+                 <Route path="/news/:pageNumber?" element={<New />} />
+                <Route path="/news/:id" element={<SingleNewsPage />} />
                 <Route path="/workshops" element={<Workshops />} />
                 <Route path="/uaeinternationaldesk" element={<UaeInternationalDesk/>} />
                 <Route path="/usinternationaldesk" element={<UsInternationalDesk/>} />
+                <Route path="/gstcomplianceadvisory"  element={<GstComplianceAdvisory/>}/>
+                <Route path="/solutions" element={<Solution/>} />
                 <Route path='/termsofuse' element={<TermsOfUse/>} />
                 <Route path="/alljoblist" element={<AllJobList/>} />
                 <Route path="/job/:jobId" element={<JobDetailsPage/>} />

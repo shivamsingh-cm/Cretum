@@ -5,7 +5,7 @@ import Logo from "../../assets/Logo.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#151021] text-gray-300 pt-10 pb-6 px-6">
+    <footer className="bg-[#151021] text-gray-300 pt-10 pb-6 px-16">
       <div className="max-w-7xl mx-auto">
         {/* Top Row content */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
@@ -50,6 +50,7 @@ const Footer = () => {
             <ul className="space-y-2 text-sm">
               {[
                 { label: "GST Services", to: "/gstservices" },
+                { label: "GST Compliance Advisory", to: "/gstcomplianceadvisory" },
                 { label: "Startup Consulting", to: "/startupconsulting" },
                 { label: "US International Desk", to: "/usinternationaldesk" },
                 { label: "UAE International Desk", to: "/uaeinternationaldesk" },

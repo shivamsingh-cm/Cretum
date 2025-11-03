@@ -1,5 +1,9 @@
 import React from 'react';
 import LeaderImage from '../../../assets/leader.png'
+import KapilSir from '../../../assets/Kapil.png'
+import JaiTahalani from '../../../assets/JaiTahalani.webp'
+import DevanSir from '../../../assets/DevanSir.webp'
+// import AanchalMam from '../../../assets/AanchalMam.png'
 const OurLeader = () => {
   
   const leaders = [
@@ -7,7 +11,7 @@ const OurLeader = () => {
       id: 1,
       name: "Devan Gupta",
       title: "Managing Partner | Ex-KPMG, PwC",
-      imageUrl: LeaderImage,
+      imageUrl: DevanSir,
       specializations: [
         "Structuring and Assurance",
       ],
@@ -20,7 +24,7 @@ const OurLeader = () => {
       id: 2,
       name: "Kapil Mahani",
       title: "Indirect Tax Partner | Ex-EY",
-      imageUrl: LeaderImage,
+      imageUrl: KapilSir,
       specializations: [
         "Indirect Taxation (GST), Customs & Foreign Trade",
       ],
@@ -48,11 +52,11 @@ const OurLeader = () => {
               className="bg-backgroundPrimaryDark/40 rounded-xl overflow-hidden shadow-xl transition duration-300 ease-in-out hover:scale-[1.01] hover:shadow-2xl flex flex-col"
             >
               {/* Image Section */}
-              <div className="relative w-full aspect-[3/2] overflow-hidden">
+              <div className="relative w-full h-80  overflow-hidden">
                 <img
                   src={leader.imageUrl}
                   alt={`Portrait of ${leader.name}`}
-                  className="w-full h-full object-cover rounded-t-xl"
+                  className="w-full  object-cover rounded-t-xl"
                   onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/6b21a8/ffffff?text=Image+Unavailable"; }}
                 />
               </div>

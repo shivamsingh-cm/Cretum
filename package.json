@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@strapi/blocks-react-renderer": "^1.0.2",
+    "axios": "^1.13.1",
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.545.0",
     "react": "^19.1.1",

@@ -7,61 +7,62 @@ import user3 from "../../../assets/trustedleading1.png";
 
 const Testimonials = () => {
   const testimonials = [
-    {
-      id: "1",
-      image: user1,
-      name: "Mark Johnson",
-      role: "Homeowner",
-      title: "Quick and Reliable Service",
-      description:
-        "I recently had an emergency plumbing issue, and this plumber provided quick and reliable service. Highly recommend!",
-    },
-    {
-      id: "2",
-      image: user2,
-      name: "Sarah Kim",
-      role: "Property Manager",
-      title: "Honest and Transparent Pricing",
-      description:
-        "They explained the pricing upfront and provided a detailed breakdown of the costs.",
-    },
-    {
-      id: "3",
-      image: user3,
-      name: "Jennifer Smith",
-      role: "Business Owner",
-      title: "Efficient and Thorough Work",
-      description:
-        "They diagnosed the problem carefully and resolved it quickly. Excellent service!",
-    },
-    {
-      id: "4",
-      image: user1,
-      name: "Michael Brown",
-      role: "Homeowner",
-      title: "Reliable and Friendly",
-      description:
-        "Fantastic service from start to finish. I’ll definitely use them again.",
-    },
-    {
-      id: "5",
-      image: user2,
-      name: "Olivia Lee",
-      role: "Landlord",
-      title: "Professional and Efficient",
-      description:
-        "Very professional service with clear communication and great results.",
-    },
-    {
-      id: "6",
-      image: user3,
-      name: "Daniel Scott",
-      role: "Restaurant Owner",
-      title: "Quick and Effective",
-      description:
-        "They got the job done faster than expected without cutting corners.",
-    },
-  ];
+  {
+    id: "1",
+    image: user1,
+    name: "Mark Johnson",
+    role: "Homeowner",
+    title: "Quick and Reliable Service",
+    description:
+      "I recently had an emergency plumbing issue, and this plumber provided quick and reliable service. Highly recommend!",
+  },
+  {
+    id: "2",
+    image: user2,
+    name: "Sarah Kim",
+    role: "Property Manager",
+    title: "Honest and Transparent Pricing",
+    description:
+      "They explained the pricing upfront and provided a detailed breakdown of the costs.",
+  },
+  {
+    id: "3",
+    image: user3,
+    name: "Jennifer Smith",
+    role: "Business Owner",
+    title: "Efficient and Thorough Work",
+    description:
+      "They diagnosed the problem carefully and resolved it quickly. Excellent service!",
+  },
+  {
+    id: "4",
+    image: user1,
+    name: "Michael Brown",
+    role: "Real Estate Investor",
+    title: "Reliable and Friendly",
+    description:
+      "Fantastic service from start to finish. I’ll definitely use them again.",
+  },
+  {
+    id: "5",
+    image: user2,
+    name: "Olivia Lee",
+    role: "Landlord",
+    title: "Professional and Efficient",
+    description:
+      "Very professional service with clear communication and great results.",
+  },
+  {
+    id: "6",
+    image: user3,
+    name: "Daniel Scott",
+    role: "Restaurant Owner",
+    title: "Quick and Effective",
+    description:
+      "They got the job done faster than expected without cutting corners.",
+  },
+];
+
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [cardsPerView, setCardsPerView] = useState(3);
