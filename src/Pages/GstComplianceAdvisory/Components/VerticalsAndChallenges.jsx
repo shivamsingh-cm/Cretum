@@ -39,8 +39,8 @@ export default function VerticalsAndChallenges() {
       <div className="max-w-[1200px] mx-auto px-6 text-center">
 
         {/* Heading */}
-        <h2 className="text-white font-semibold text-h-lg">Common GST Challenges We Solve</h2>
-        <p className="text-gray-400 mt-3 text-subtitle max-w-[740px] mx-auto">
+        <h2 className="text-white font-medium text-4xl ">Common GST Challenges We Solve</h2>
+        <p className="text-gray-400 mt-3 text-base max-w-[640px] font-normal mx-auto">
           Businesses face numerous GST complexities. We’ve helped hundreds overcome these exact challenges.
         </p>
 
@@ -49,16 +49,16 @@ export default function VerticalsAndChallenges() {
           {cardsTop.map((c, i) => (
             <article
               key={i}
-              className="bg-backgroundSecondary/40 backdrop-blur-xl border border-white/6 rounded-xl2 p-8 text-center
+              className="bg-backgroundSecondary/40 backdrop-blur-xl border border-gray-700 rounded-md rounded-xl2 p-8 text-start
               transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:bg-backgroundSecondary/60 cursor-pointer"
             >
-              {/* Icon */}
-              <div className="w-14 h-14 mx-auto rounded-full flex items-center justify-center bg-buttonBackground/15 mb-4">
+              {/* Icon (Left aligned) */}
+              <div className="w-14 h-14 rounded-full flex items-center justify-center bg-buttonBackground/15 mb-4">
                 <c.Icon className="text-buttonBackground" size={28} strokeWidth={2} />
               </div>
 
               {/* Title */}
-              <h3 className="text-white font-semibold text-card-title leading-snug">{c.title}</h3>
+              <h3 className="text-white font-medium text-lg text-card-title leading-snug">{c.title}</h3>
 
               {/* Description */}
               <p className="text-gray-400 text-card-small mt-2">{c.desc}</p>
@@ -66,13 +66,14 @@ export default function VerticalsAndChallenges() {
           ))}
         </div>
 
+
         {/* Divider */}
-        <div className="mt-16 border-t border-white/6"></div>
+        <div className="mt-16 border-t border-gray-700"></div>
 
         {/* Repeated heading */}
         <div className="mt-12">
-          <h2 className="text-white font-semibold text-h-lg">Common GST Challenges We Solve</h2>
-          <p className="text-gray-400 mt-3 text-subtitle max-w-[740px] mx-auto">
+          <h2 className="text-white  text-4xl font-medium">Common GST Challenges We Solve</h2>
+          <p className="text-gray-400 mt-3 text-base font-normal max-w-[640px] mx-auto">
             Businesses face numerous GST complexities. We’ve helped hundreds overcome these exact challenges.
           </p>
         </div>
@@ -82,10 +83,10 @@ export default function VerticalsAndChallenges() {
           {cardsBottom.map((c, i) => (
             <article
               key={i}
-              className="bg-backgroundSecondary/36 backdrop-blur-xl border border-white/6 rounded-xl2 p-6 text-left
+              className="bg-backgroundSecondary/36 backdrop-blur-xl border border-gray-700  rounded-md p-6 text-left
               transition-all duration-300 hover:scale-[1.03] hover:shadow-xl hover:bg-backgroundSecondary/56 cursor-pointer"
             >
-              <h3 className="text-white font-semibold text-card-title leading-snug">{c.title}</h3>
+              <h3 className="text-white font-medium text-lg leading-snug">{c.title}</h3>
 
               <ul className="mt-4 text-gray-300 text-card-small space-y-2">
                 {c.points.map((pt, idx) => (

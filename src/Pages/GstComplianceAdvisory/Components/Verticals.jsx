@@ -20,7 +20,7 @@ export default function Verticals() {
     <section className="w-full bg-backgroundPrimary py-20">
       <div className="max-w-[1200px] mx-auto px-4 text-center">
         {/* Heading */}
-        <h2 className="text-white text-3xl md:text-4xl font-medium">
+        <h2 className="text-white text-3xl md:text-4xl lg:text-5xl font-medium">
           Verticals we serve
         </h2>
 
@@ -35,20 +35,7 @@ export default function Verticals() {
           {items.map((item, index) => (
             <div
               key={index}
-              className="
-                bg-backgroundSecondary/40 
-                backdrop-blur-xl 
-                border border-white/10 
-                rounded-2xl 
-                p-3
-                flex flex-col items-center justify-center gap-4 
-                transition-all duration-300 
-                hover:scale-[1.03] 
-                hover:shadow-xl 
-                hover:bg-backgroundSecondary/60
-                cursor-pointer
-              "
-
+              className=" bg-backgroundSecondary/40 backdrop-blur-xl border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:scale-[1.03] hover:shadow-xl  hover:bg-backgroundSecondary/60 cursor-pointer"
             >
               <img src={item.icon} alt={item.label} className="w-[140px] h-[140px] object-contain" />
               <p className="text-white  text-xl md:text-2xl font-normal">{item.label}</p>

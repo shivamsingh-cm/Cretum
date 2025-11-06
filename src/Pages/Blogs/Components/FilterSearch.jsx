@@ -1135,6 +1135,8 @@ const FilterSearch = ({ currentPage: propCurrentPage, onPageChange }) => {
     );
   }
 
+  {isloding && <Loader/>}
+
   if (error) {
     return (
       <div className="min-h-screen bg-backgroundPrimary text-gray-100 font-sans p-6 sm:p-10 lg:p-16">

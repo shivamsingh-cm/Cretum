@@ -235,15 +235,37 @@
 import React from 'react'
 import Verticals from './Components/Verticals'
 import GstHeroSection from './Components/GstHeroSection'
+import TrustedBrands from '../../Pages/Home/Component/TrustedBrands'
+import VerticalsAndChallenges from './Components/VerticalsAndChallenges'
 import ThreeStepApproach from './Components/ThreeStepApproach'
 import ThreeStepApproachRightImage from './Components/ThreeStepApproachRightImage'
+import FAQ from '../../Pages/Home/Component/FaqSection'
+import CtaBanner from '../../Pages/Home/Component/CtaBanner'
+import Resources from '../../Pages/Home/Component/Resources'
+import Testimonial from '../../Pages/Home/Component/Testimonials'
+import Features from './Components/Features'
+import ExperienceStats from './Components/ExperienceStats'
+import ThreeStepApproach1 from './Components/ThreeStepApproach1'
 function Main() {
   return (
     <>
-    <Verticals/>
     <GstHeroSection/>
+    <TrustedBrands/>
+    <VerticalsAndChallenges />
+    <ExperienceStats/>
+    <Verticals/>
+    
+    <Features/>
+    <ThreeStepApproach1/>
     <ThreeStepApproach/>
     <ThreeStepApproachRightImage/>
+    <Testimonial />
+    
+    
+    <Resources/>
+    <FAQ/>
+    <CtaBanner/>
+  
     </>
   )
 }
