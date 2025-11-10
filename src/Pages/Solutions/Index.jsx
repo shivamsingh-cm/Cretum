@@ -1,19 +1,3 @@
-// import React from 'react'
-
-// function Index() {
-//   return (
-//     <section className="min-h-screen bg-backgroundPrimary p-6 sm:p-10 md:p-14 lg:p-16">
-//       <div className="max-w-7xl mx-auto">
-        
-//        <h1 className='text-white'>Work in progress..</h1>
-     
-//       </div>
-//     </section>
-//   )
-// }
-
-// export default Index
-
 import React from 'react';
 import { Construction } from 'lucide-react';
 

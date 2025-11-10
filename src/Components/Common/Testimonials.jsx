@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import TestimonialCard from "../../../Components/Common/TestimonialCard";
-import user1 from "../../../assets/trustedleading1.png";
-import user2 from "../../../assets/trustedleading1.png";
-import user3 from "../../../assets/trustedleading1.png";
+import TestimonialCard from "../../Components/Common/TestimonialCard";
+import user1 from "../../assets/trustedleading1.png";
+import user2 from "../../assets/trustedleading1.png";
+import user3 from "../../assets/trustedleading1.png";
 
 const Testimonials = () => {
   const testimonials = [

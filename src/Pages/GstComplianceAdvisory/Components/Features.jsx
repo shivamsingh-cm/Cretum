@@ -231,3 +231,5 @@ const FlipCard = ({ card, cardIndex, widthClass }) => {
 
 export default Features;
 
+
+

@@ -3,7 +3,7 @@ import stepImg from "../../../assets/gstserviceleftbgimage.jpg";
 
 export default function ThreeStepApproach1() {
   return (
-    <section className="w-full bg-[#0D0620] text-white py-16">
+    <section className="w-full bg-backgroundPrimary text-white py-16">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-10">
 
         {/* LEFT IMAGE INSIDE CONTAINER */}
@@ -21,7 +21,7 @@ export default function ThreeStepApproach1() {
             Our Unique 3-Step Approach
           </h2>
 
-          <p className="text-[#C5C2CF] text-sm leading-relaxed mb-8">
+          <p className="text-white text-sm leading-relaxed mb-8">
             Unlike traditional GST service providers who focus solely on compliance,
             our approach transforms GST from a burden into a strategic advantage for your business.
           </p>
@@ -36,7 +36,7 @@ export default function ThreeStepApproach1() {
                 <h3 className="font-medium">{step}</h3>
 
                 {i === 0 && (
-                  <p className="text-[#C5C2CF] text-sm mt-2">
+                  <p className="text-white text-sm mt-2">
                     Comprehensive assessment of your current GST position,
                     identifying risks and opportunities.
                   </p>
