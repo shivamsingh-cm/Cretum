@@ -1,17 +1,49 @@
-import React from "react";
-import stepImg from "../../../assets/gstserviceleftbgimage.jpg";
+import React, { useState } from "react";
+import { Plus, Minus } from "lucide-react";
+
+import DiagnoseImg from "../../../assets/gstserviceleftbgimage.jpg";
+import OptimizeImg from "../../../assets/gstserviceleftbgimage.jpg"; 
+import SustainImg from "../../../assets/gstserviceleftbgimage.jpg";
 
 export default function ThreeStepApproach1() {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const steps = [
+    {
+      title: "Diagnose",
+      description:
+        "Comprehensive assessment of your current GST position, identifying risks and opportunities.",
+      image: DiagnoseImg,
+    },
+    {
+      title: "Optimize",
+      description:
+        "Implement smart automation, process improvements, and credit optimization strategies.",
+      image: OptimizeImg,
+    },
+    {
+      title: "Sustain",
+      description:
+        "Ongoing monitoring, compliance support, and proactive insights to stay ahead of regulatory changes.",
+      image: SustainImg,
+    },
+  ];
+
+  // Default image if no accordion open
+  const defaultImage = DiagnoseImg;
+  const currentImage = activeIndex !== null ? steps[activeIndex].image : defaultImage;
+
   return (
     <section className="w-full bg-backgroundPrimary text-white py-16">
-      <div className="max-w-[1200px] mx-auto px-6 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-10">
-
-        {/* LEFT IMAGE INSIDE CONTAINER */}
-        <div className="w-full h-[380px] sm:h-[450px] lg:h-[600px]">
+      <div className="max-w-[1200px] mx-auto px-6 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        {/* LEFT IMAGE */}
+        <div className="relative w-full h-[380px] sm:h-[450px] lg:h-[600px] overflow-hidden rounded-xl">
           <img
-            src={stepImg}
+            key={currentImage}
+            src={currentImage}
+            loading="lazy"
             alt="3 Step Approach"
-            className="w-full h-full object-cover rounded-xl"
+            className="w-full h-full object-cover rounded-xl transition-all duration-500 ease-in-out"
           />
         </div>
 
@@ -28,24 +60,39 @@ export default function ThreeStepApproach1() {
 
           {/* Accordion */}
           <div className="space-y-3">
-            {["Diagnose", "Optimize", "Sustain"].map((step, i) => (
-              <div
-                key={i}
-                className="bg-[#1A122F] p-5 rounded-xl cursor-pointer hover:bg-[#241A3E] transition"
-              >
-                <h3 className="font-medium">{step}</h3>
+            {steps.map((step, i) => {
+              const isActive = activeIndex === i;
+              return (
+                <div
+                  key={i}
+                  onClick={() => setActiveIndex(isActive ? null : i)}
+                  className={`p-5 rounded-xl cursor-pointer transition-all duration-300 border border-white/20 ${
+                    isActive
+                      ? "bg-[#241A3E]"
+                      : "bg-[#1A122F] hover:bg-[#241A3E]"
+                  }`}
+                >
+                  <div className="flex justify-between items-center">
+                    <h3 className="font-medium text-lg">{step.title}</h3>
+                    {isActive ? (
+                      <Minus className="w-5 h-5 text-[#7A3EFF]" />
+                    ) : (
+                      <Plus className="w-5 h-5 text-[#7A3EFF]" />
+                    )}
+                  </div>
 
-                {i === 0 && (
-                  <p className="text-white text-sm mt-2">
-                    Comprehensive assessment of your current GST position,
-                    identifying risks and opportunities.
-                  </p>
-                )}
-              </div>
-            ))}
+                  {isActive && (
+                    <p className="text-white/90 text-sm mt-3 leading-relaxed">
+                      {step.description}
+                    </p>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
     </section>
   );
 }
+

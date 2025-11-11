@@ -11,6 +11,8 @@ import Testimonial from '../../Components/Common/Testimonials'
 import Features from './Components/Features'
 import ExperienceStats from './Components/ExperienceStats'
 import ThreeStepApproach1 from './Components/ThreeStepApproach1'
+import OurMethodology from './Components/OurMethodology'
+import GstServices from './Components/GstServices'
 function Main() {
   const threeSteps = [
     {
@@ -33,9 +35,12 @@ function Main() {
     <TrustedBrands/>
     <VerticalsAndChallenges />
     <ExperienceStats/>
+    <GstServices/>
+    <OurMethodology/>
+    <ThreeStepApproach1/>
     <Verticals/>
     <Features/>
-    <ThreeStepApproach1/>
+
     {/* Image Left */}
     <ThreeStepApproach steps={threeSteps} imageRight={false} />
     {/* Image Right */}

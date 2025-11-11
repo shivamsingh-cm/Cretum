@@ -287,7 +287,7 @@ export const blogApi = {
     try {
       console.log(`Fetching blog by ID/Slug: ${idOrSlug}`);
       const response = await api.get(`/api/blogs/${idOrSlug}`);
-      console.log('Single Blog API Response:', response.data);
+      console.log('Single Blog API Response ==============', response.data.data);
       
       // Check if response has the expected structure
       if (!response.data || !response.data.data) {

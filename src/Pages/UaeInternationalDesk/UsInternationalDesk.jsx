@@ -1,6 +1,6 @@
 import React from 'react'
 import HeroSection from './HeroSectionUs'
-import FAQSection from '../Home/Component/FaqSection'
+import FAQSection from '../../Components/Common/FaqSection'
 import CtaBanner from './Components/CtaBanner'
 import Resources from '../Home/Component/Resources'
 import TrustedBrands from '../Home/Component/TrustedBrands'

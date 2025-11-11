@@ -1135,7 +1135,6 @@ const FilterSearch = ({ currentPage: propCurrentPage, onPageChange }) => {
     );
   }
 
-  {isloding && <Loader/>}
 
   if (error) {
     return (

@@ -1,11 +1,11 @@
 
 
 import Verticalserver1 from '../../../assets/verticalserver1.png'
- import Verticalserver2 from '../../../assets/verticalserver2.png'
- import Verticalserver3 from '../../../assets/verticalserver3.png'
- import Verticalserver4 from '../../../assets/verticalserver4.png'
- import Verticalserver5 from '../../../assets/verticalserver5.png'
- import Verticalserver6 from '../../../assets/verticalserver6.png'
+import Verticalserver2 from '../../../assets/verticalserver2.png'
+import Verticalserver3 from '../../../assets/verticalserver3.png'
+import Verticalserver4 from '../../../assets/verticalserver4.png'
+import Verticalserver5 from '../../../assets/verticalserver5.png'
+import Verticalserver6 from '../../../assets/verticalserver6.png'
 export default function Verticals() {
   const items = [
     { icon: Verticalserver1, label: "IT & Technology" },
