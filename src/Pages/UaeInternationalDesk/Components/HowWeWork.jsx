@@ -1,5 +1,4 @@
-import React from "react";
-import Resource from '../../../assets/resource.png'
+import Resource from "../../../assets/resource.png";
 const steps = [
   {
     title: "Connect",
@@ -55,30 +54,28 @@ export default function HowWeWork() {
         </h3>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, index) => (
-                <div
-                key={index}
-                className="relative rounded-xl overflow-hidden h-80 hover:scale-105 transform transition-all duration-300"
-                >
-                {/* Full-height image */}
-                <img
-                    src={step.image}
-                    alt={step.title}
-                    className="absolute inset-0 w-full h-full object-cover"
-                />
+          {steps.map((step, index) => (
+            <div
+              key={index}
+              className="relative rounded-xl overflow-hidden h-80 hover:scale-105 transform transition-all duration-300"
+            >
+              {/* Full-height image */}
+              <img
+                src={step.image}
+                alt={step.title}
+                className="absolute inset-0 w-full h-full object-cover"
+              />
 
-                {/* Gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent"></div>
+              {/* Gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent"></div>
 
-
-                <div className="relative z-10 p-5 text-white flex flex-col justify-end h-full">
-                    <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
-                    <p className="text-sm text-white/50">{step.description}</p>
-                </div>
-                </div>
-            ))}
+              <div className="relative z-10 p-5 text-white flex flex-col justify-end h-full">
+                <h4 className="text-lg font-semibold mb-2">{step.title}</h4>
+                <p className="text-sm text-white/50">{step.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
-
       </section>
 
       {/* Experts */}

@@ -1,17 +1,15 @@
-import React from "react";
 import logo1 from "../../../assets/707.png";
 import logo2 from "../../../assets/CCI.png";
 import logo3 from "../../../assets/Digimap.png";
 import logo4 from "../../../assets/DigitsTrading.png";
 import logo5 from "../../../assets/Green.png";
-import logo6 from '../../../assets/Gemilang.png';
-import logo7 from '../../../assets/Burgundy.png';
-import logo8 from '../../../assets/Stepout.avif';
-import logo9 from '../../../assets/vidyoai.png';
-import logo10 from '../../../assets/wheelseye.svg';
+import logo6 from "../../../assets/Gemilang.png";
+import logo7 from "../../../assets/Burgundy.png";
+import logo8 from "../../../assets/Stepout.avif";
+import logo9 from "../../../assets/vidyoai.png";
+import logo10 from "../../../assets/wheelseye.svg";
 
 const TrustedBrands = () => {
-  
   const brands = [
     { logo: logo1, name: "707" },
     { logo: logo2, name: "CCI" },
@@ -32,8 +30,6 @@ const TrustedBrands = () => {
         <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-3 uppercase tracking-wide">
           Trusted by leading brands
         </h2>
-       
-       
       </div>
 
       {/* Infinite Scroll Container */}
@@ -56,12 +52,9 @@ const TrustedBrands = () => {
             </div>
           ))}
         </div>
-
-
       </div>
     </section>
   );
 };
 
 export default TrustedBrands;
-

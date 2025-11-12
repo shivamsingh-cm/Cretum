@@ -1,7 +1,5 @@
-
-
-import React, { useState } from "react";
-import RandomImage from '../../../assets/randomblog.jpg'
+import { useState } from "react";
+import RandomImage from "../../../assets/randomblog.jpg";
 const services = [
   {
     id: 1,
@@ -107,4 +105,3 @@ export default function OurService() {
     </section>
   );
 }
-

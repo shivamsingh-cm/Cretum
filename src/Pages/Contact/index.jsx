@@ -1,18 +1,17 @@
-import React from 'react'
-import ContactUs from './Component/ContactUs'
-import Locations from './Component/Locations'
-import FAQSection from '../../Components/Common/FaqSection'
-import CtaBanner from '../Home/Component/CtaBanner'
+import ContactUs from "./Component/ContactUs";
+import Locations from "./Component/Locations";
+import FAQSection from "../../Components/Common/FaqSection";
+import CtaBanner from "../Home/Component/CtaBanner";
 
 function Index() {
   return (
     <>
-    <ContactUs />
-    <Locations />
-    <FAQSection />
-    <CtaBanner />
+      <ContactUs />
+      <Locations />
+      <FAQSection />
+      <CtaBanner />
     </>
-  )
+  );
 }
 
-export default Index
+export default Index;

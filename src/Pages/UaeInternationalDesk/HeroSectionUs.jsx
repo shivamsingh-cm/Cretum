@@ -1,18 +1,18 @@
-import React, { useRef, useEffect, useState } from "react";
-import MapBase from '../../assets/mapbase.png';
+import { useRef, useEffect, useState } from "react";
+import MapBase from "../../assets/mapbase.png";
 import { MapPin } from "lucide-react";
 import Modal from "../../Components/ScheduleCall/Modal";
 import ScheduleCallForm from "../../Components/ScheduleCall/ScheduleCallForm";
 
 const locations = [
-  { name: "New York", top: 25, left: 20 }, // percentages as numbers
+  { name: "New York", top: 25, left: 20 },
   { name: "Chicago", top: 35, left: 45 },
   { name: "Los Angeles", top: 50, left: 70 },
   { name: "Houston", top: 60, left: 55 },
 ];
 
 export default function HeroSection() {
-  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const mapRef = useRef(null);
   const [mapSize, setMapSize] = useState({ width: 0, height: 0 });
 
@@ -62,16 +62,17 @@ export default function HeroSection() {
             Your Trusted Partner for US <br /> Accounting & Compliance
           </h1>
           <p className="text-white text-base sm:text-lg md:text-xl max-w-3xl mx-auto mt-4">
-            From fund accounting to audit support — we provide comprehensive finance
-            and accounting solutions tailored for businesses expanding to the US.
+            From fund accounting to audit support — we provide comprehensive
+            finance and accounting solutions tailored for businesses expanding
+            to the US.
           </p>
         </header>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
-          <button 
-             onClick={()=> setIsModalOpen(true)}
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="bg-buttonBackground rounded-full text-white py-2 px-4"
-            >
+          >
             Schedule a Call
           </button>
           <button className="border-2 border-white rounded-full text-white py-2 px-6">
@@ -117,11 +118,9 @@ export default function HeroSection() {
         </div>
       </div>
 
-       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <ScheduleCallForm onSubmit={() => setIsModalOpen(false)} />
       </Modal>
     </div>
   );
 }
-
-

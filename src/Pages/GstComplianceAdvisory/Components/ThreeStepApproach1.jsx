@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-
 import DiagnoseImg from "../../../assets/gstserviceleftbgimage.jpg";
-import OptimizeImg from "../../../assets/gstserviceleftbgimage.jpg"; 
+import OptimizeImg from "../../../assets/gstserviceleftbgimage.jpg";
 import SustainImg from "../../../assets/gstserviceleftbgimage.jpg";
 
 export default function ThreeStepApproach1() {
@@ -31,12 +30,13 @@ export default function ThreeStepApproach1() {
 
   // Default image if no accordion open
   const defaultImage = DiagnoseImg;
-  const currentImage = activeIndex !== null ? steps[activeIndex].image : defaultImage;
+  const currentImage =
+    activeIndex !== null ? steps[activeIndex].image : defaultImage;
 
   return (
     <section className="w-full bg-backgroundPrimary text-white py-16">
       <div className="max-w-[1200px] mx-auto px-6 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
-        {/* LEFT IMAGE */}
+        {/* left image */}
         <div className="relative w-full h-[380px] sm:h-[450px] lg:h-[600px] overflow-hidden rounded-xl">
           <img
             key={currentImage}
@@ -47,20 +47,21 @@ export default function ThreeStepApproach1() {
           />
         </div>
 
-        {/* RIGHT CONTENT */}
+        {/* right content */}
         <div className="flex flex-col justify-center max-w-[520px]">
           <h2 className="text-3xl sm:text-4xl font-semibold mb-4">
             Our Unique 3-Step Approach
           </h2>
 
           <p className="text-white text-sm leading-relaxed mb-8">
-            Unlike traditional GST service providers who focus solely on compliance,
-            our approach transforms GST from a burden into a strategic advantage for your business.
+            Unlike traditional GST service providers who focus solely on
+            compliance, our approach transforms GST from a burden into a
+            strategic advantage for your business.
           </p>
 
-          {/* Accordion */}
+          {/* cccordion */}
           <div className="space-y-3">
-            {steps.map((step, i) => {
+            {steps?.map((step, i) => {
               const isActive = activeIndex === i;
               return (
                 <div
@@ -95,4 +96,3 @@ export default function ThreeStepApproach1() {
     </section>
   );
 }
-

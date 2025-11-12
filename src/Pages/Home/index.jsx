@@ -1,30 +1,29 @@
-import React from 'react'
-import Hero from './Component/Hero'
-import TrustedBrands from './Component/TrustedBrands'
-import TrustedAdvisors from './Component/TrustedAdvisors'
-import Istockphoto from './Component/Istockphoto'
-import ExperienceStats from './Component/ExperienceStats'
-import Testimonials from '../../Components/Common/Testimonials'
-import FAQSection from '../../Components/Common/FaqSection'
-import Resources from './Component/Resources'
-import CtaBanner from './Component/CtaBanner'
-import Services from './Component/Services'
+import Hero from "./Component/Hero";
+import TrustedBrands from "./Component/TrustedBrands";
+import TrustedAdvisors from "./Component/TrustedAdvisors";
+import Istockphoto from "./Component/Istockphoto";
+import ExperienceStats from "./Component/ExperienceStats";
+import Testimonials from "../../Components/Common/Testimonials";
+import FAQSection from "../../Components/Common/FaqSection";
+import Resources from "./Component/Resources";
+import CtaBanner from "./Component/CtaBanner";
+import Services from "./Component/Services";
 
 function index() {
   return (
-    <div className='overflow-x-hidden'>
-        <Hero />
-        <TrustedBrands />
-        <TrustedAdvisors />
-        <Istockphoto />
-        <ExperienceStats />
-        <Services />
-        <Testimonials />
-        <Resources />
-        <FAQSection />
-        <CtaBanner />
+    <div className="overflow-x-hidden">
+      <Hero />
+      <TrustedBrands />
+      <TrustedAdvisors />
+      <Istockphoto />
+      <ExperienceStats />
+      <Services />
+      <Testimonials />
+      <Resources />
+      <FAQSection />
+      <CtaBanner />
     </div>
-  )
+  );
 }
 
-export default index
+export default index;

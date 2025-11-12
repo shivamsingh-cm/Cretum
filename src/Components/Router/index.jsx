@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import Layout from "../Layout";
 import Loader from "../Loader";
 import ScrollToTop from "../ScrollTop";
-
+import  LoadingHandler  from '../../Components/Common/LoadingHandler'
 const Home = lazy(() => import("../../Pages/Home"));
 const Contact = lazy(() => import("../../Pages/Contact"));
 const PageNotFound = lazy(() => import("../../Pages/PageNotFound"));
@@ -29,10 +29,21 @@ const Index = () => {
         <ScrollToTop />
 
         <Suspense
-            fallback={
-                <div className="flex items-center justify-center h-screen bg-backgroundPrimary">
-                <Loader />
-                </div>
+            // fallback={
+            //     <div className="flex items-center justify-center h-screen bg-backgroundPrimary">
+            //     <Loader />
+            //     </div>
+            // }
+             fallback={
+                <LoadingHandler 
+                  state="loading"
+                  type="spinner"
+                  variant="default"
+                  size="lg"
+                  fullScreen={true}
+                  centered={true}
+                  message="Loading ..."
+                />
             }
         >
             <Routes>

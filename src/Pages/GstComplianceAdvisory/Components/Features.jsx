@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import Gstcafeatur1 from '../../../assets/gstcafeatur1.png'
-import Gstcafeatur2 from '../../../assets/gstcafeatur2.png'
-import Gstcafeatur3 from '../../../assets/gstcafeatur3.png'
-import Gstcafeatur4 from '../../../assets/gstcafeatur4.png'
+import { useState, useEffect } from "react";
+import Gstcafeatur1 from "../../../assets/gstcafeatur1.png";
+import Gstcafeatur2 from "../../../assets/gstcafeatur2.png";
+import Gstcafeatur3 from "../../../assets/gstcafeatur3.png";
+import Gstcafeatur4 from "../../../assets/gstcafeatur4.png";
 
 const featuresData = [
   {
@@ -57,11 +57,11 @@ const featuresData = [
 
 const Features = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-  
+
   // Calculate total slides - each slide shows 4 items (2 rows of 2)
   const itemsPerSlide = 4;
   const totalSlides = Math.ceil(featuresData.length / itemsPerSlide);
-  
+
   // Auto slide every 10 seconds
   useEffect(() => {
     if (totalSlides > 1) {
@@ -85,58 +85,65 @@ const Features = () => {
   return (
     <section className="w-full bg-backgroundPrimary py-20 text-black">
       <div className="max-w-[1200px] mx-auto px-5">
-
         {/* Section Heading */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-medium mb-3 text-white">Features</h2>
           <p className="text-gray-300 max-w-[600px] font-normal mx-auto text-base">
-            We combine deep tax expertise with cutting-edge technology to deliver a seamless GST experience that transforms compliance into strategic advantage.
+            We combine deep tax expertise with cutting-edge technology to
+            deliver a seamless GST experience that transforms compliance into
+            strategic advantage.
           </p>
         </div>
 
         {/* Carousel Container with fixed height */}
         <div className="relative overflow-hidden h-[680px] bg-backgroundPrimary">
           {/* Slides Container with proper stacking */}
-          <div 
+          <div
             className="h-full "
             style={{
               transform: `translateY(-${currentSlide * 680}px)`,
-              transition: "transform 2s ease-in-out"
+              transition: "transform 2s ease-in-out",
             }}
           >
             {Array.from({ length: totalSlides }).map((_, slideIndex) => (
-              <div 
+              <div
                 key={slideIndex}
                 className="w-full h-[680px] flex flex-col justify-center"
               >
                 <div className="space-y-6">
-                  {getSlideItems(slideIndex).reduce((rowPairs, _, index, array) => {
-                    if (index % 2 === 0) {
-                      rowPairs.push(array.slice(index, index + 2));
-                    }
-                    return rowPairs;
-                  }, []).map((row, rowIndex) => (
-                    <div 
-                      key={rowIndex} 
-                      className={`flex flex-col lg:flex-row gap-6 ${rowIndex % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
-                    >
-                      {/* 70% Width Card */}
-                      <FlipCard 
-                        card={row[0]}
-                        cardIndex={slideIndex * itemsPerSlide + rowIndex * 2}
-                        widthClass="lg:w-[70%]"
-                      />
-                      
-                      {/* 30% Width Card - Only if row has second item */}
-                      {row[1] && (
-                        <FlipCard 
-                          card={row[1]}
-                          cardIndex={slideIndex * itemsPerSlide + rowIndex * 2 + 1}
-                          widthClass="lg:w-[30%]"
+                  {getSlideItems(slideIndex)
+                    .reduce((rowPairs, _, index, array) => {
+                      if (index % 2 === 0) {
+                        rowPairs.push(array.slice(index, index + 2));
+                      }
+                      return rowPairs;
+                    }, [])
+                    .map((row, rowIndex) => (
+                      <div
+                        key={rowIndex}
+                        className={`flex flex-col lg:flex-row gap-6 ${
+                          rowIndex % 2 === 1 ? "lg:flex-row-reverse" : ""
+                        }`}
+                      >
+                        {/* 70% Width Card */}
+                        <FlipCard
+                          card={row[0]}
+                          cardIndex={slideIndex * itemsPerSlide + rowIndex * 2}
+                          widthClass="lg:w-[70%]"
                         />
-                      )}
-                    </div>
-                  ))}
+
+                        {/* 30% Width Card - Only if row has second item */}
+                        {row[1] && (
+                          <FlipCard
+                            card={row[1]}
+                            cardIndex={
+                              slideIndex * itemsPerSlide + rowIndex * 2 + 1
+                            }
+                            widthClass="lg:w-[30%]"
+                          />
+                        )}
+                      </div>
+                    ))}
                 </div>
               </div>
             ))}
@@ -151,9 +158,9 @@ const Features = () => {
                 key={index}
                 onClick={() => handleDotClick(index)}
                 className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentSlide 
-                    ? 'bg-buttonBackground scale-125' 
-                    : 'bg-gray-500 hover:bg-gray-400'
+                  index === currentSlide
+                    ? "bg-buttonBackground scale-125"
+                    : "bg-gray-500 hover:bg-gray-400"
                 }`}
               />
             ))}
@@ -180,29 +187,32 @@ const Features = () => {
 };
 
 // Flip Card Component
-const FlipCard = ({ card, cardIndex, widthClass }) => {
+const FlipCard = ({ card, widthClass }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   return (
-    <div 
+    <div
       className={`${widthClass} h-80 rounded-xl overflow-hidden relative group cursor-pointer perspective`}
       onMouseEnter={() => setIsFlipped(true)}
       onMouseLeave={() => setIsFlipped(false)}
     >
-      <div className={`relative w-full h-full preserve-3d transition-transform duration-700 ${
-        isFlipped ? 'rotate-y-180' : ''
-      }`}>
+      <div
+        className={`relative w-full h-full preserve-3d transition-transform duration-700 ${
+          isFlipped ? "rotate-y-180" : ""
+        }`}
+      >
         {/* Front of card */}
         <div className="absolute w-full h-full backface-hidden">
           <img
-            src={card.img}
+            src={card?.img}
             alt={card.title}
+            loading="lazy"
             className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
           />
           <div className="absolute top-0 left-0 w-full h-full p-6 flex flex-col justify-between">
             <div>
-              <h3 className="text-2xl font-normal">{card.title}</h3>
-              <p className="text-sm mt-1 font-normal">{card.desc}</p>
+              <h3 className="text-2xl font-normal">{card?.title}</h3>
+              <p className="text-sm mt-1 font-normal">{card?.desc}</p>
             </div>
             {card.btn && (
               <button className="mt-4 px-4 py-2 rounded-full bg-white  transition text-sm font-medium w-fit">
@@ -211,12 +221,12 @@ const FlipCard = ({ card, cardIndex, widthClass }) => {
             )}
           </div>
         </div>
-        
+
         {/* Back of card (flipped content) */}
         <div className="absolute w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-buttonBackground to-purple-600 rounded-xl flex items-center justify-center p-6">
           <div className="text-white text-center">
-            <h3 className="text-xl font-bold mb-3">{card.title}</h3>
-            <p className="text-sm opacity-90 mb-4">{card.desc}</p>
+            <h3 className="text-xl font-bold mb-3">{card?.title}</h3>
+            <p className="text-sm opacity-90 mb-4">{card?.desc}</p>
             {card.btn && (
               <button className="px-6 py-2 rounded-lg bg-white text-buttonBackground hover:bg-gray-100 transition text-sm font-medium">
                 Learn More
@@ -230,6 +240,3 @@ const FlipCard = ({ card, cardIndex, widthClass }) => {
 };
 
 export default Features;
-
-
-

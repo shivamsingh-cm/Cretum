@@ -1,13 +1,12 @@
-import React from 'react'
-import PrivacyPolicy from './PrivacyPolicy'
-import CtaBanner from '../Home/Component/CtaBanner' 
+import PrivacyPolicy from "./PrivacyPolicy";
+import CtaBanner from "../Home/Component/CtaBanner";
 function Index() {
   return (
     <div>
-     <PrivacyPolicy />
-     <CtaBanner />
+      <PrivacyPolicy />
+      <CtaBanner />
     </div>
-  )
+  );
 }
 
-export default Index
+export default Index;

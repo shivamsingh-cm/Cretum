@@ -1,7 +1,3 @@
-
-
-
-import React from "react";
 import DevanSir from "../../../assets/DevanSir.webp";
 import KapilSir from "../../../assets/Kapil.png";
 import JaiTahalani from "../../../assets/JaiTahalani.webp";
@@ -27,14 +23,18 @@ const ProfileCard = ({ person }) => (
 
     {/* Text Section */}
     <div className="p-6 sm:p-8 flex-grow flex flex-col">
-      <h3 className="text-xl font-medium text-white mb-2">{person.name}</h3>
-      <p className="text-white/80 text-base font-normal mb-6">{person.title}</p>
+      <h3 className="text-xl font-medium text-white mb-2">{person?.name}</h3>
+      <p className="text-white/80 text-base font-normal mb-6">
+        {person?.title}
+      </p>
 
       <ul className="space-y-2 text-white/80 text-base flex-grow">
         {person.details?.map((detail, index) => (
           <li key={index}>
-            <span className="font-bold text-base text-white/80">{detail.label}:</span  >{" "}
-             <span className="font-normal">{detail.value}</span>
+            <span className="font-bold text-base text-white/80">
+              {detail?.label}:
+            </span>{" "}
+            <span className="font-normal">{detail?.value}</span>
           </li>
         ))}
 
@@ -45,25 +45,31 @@ const ProfileCard = ({ person }) => (
               <span className="font-bold text-base text-white/70">
                 Specialization:
               </span>{" "}
-              <span className="font-normal">{person.specializations.join(", ")}</span> 
+              <span className="font-normal">
+                {person?.specializations.join(", ")}
+              </span>
             </li>
             <li>
-              <span className="font-bold text-base text-white/70">Experience:</span>{" "}
-              {person.experience}
+              <span className="font-bold text-base text-white/70">
+                Experience:
+              </span>{" "}
+              {person?.experience}
             </li>
             <li>
-              <span className="font-bold text-base text-white/70">Key Clients:</span>{" "}
-              {person.keyClients}
+              <span className="font-bold text-base text-white/70">
+                Key Clients:
+              </span>{" "}
+              {person?.keyClients}
             </li>
             <li>
               <span className="font-bold text-base text-white/70">
                 Qualification:
               </span>{" "}
-              {person.qualification}
+              {person?.qualification}
             </li>
             <li>
               <span className="font-bold text-base text-white/70">Focus:</span>{" "}
-              {person.focus}
+              {person?.focus}
             </li>
           </>
         )}
@@ -73,7 +79,6 @@ const ProfileCard = ({ person }) => (
 );
 
 const OurLeader = () => {
-  
   const leaders = [
     {
       id: 1,
@@ -99,7 +104,6 @@ const OurLeader = () => {
     },
   ];
 
-
   const advisors = [
     {
       id: 1,
@@ -114,7 +118,8 @@ const OurLeader = () => {
         },
         {
           label: "Clients Managed",
-          value: "NITI Aayog, Ministry of Afghanistan, Ministry of Liberia, Honda",
+          value:
+            "NITI Aayog, Ministry of Afghanistan, Ministry of Liberia, Honda",
         },
         { label: "Qualification", value: "ACA, B.Com (Hons.)" },
       ],
@@ -153,8 +158,8 @@ const OurLeader = () => {
             Our Leadership Champions
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-12">
-            {leaders.map((leader) => (
-              <ProfileCard key={leader.id} person={leader} />
+            {leaders?.map((leader) => (
+              <ProfileCard key={leader?.id} person={leader} />
             ))}
           </div>
         </section>
@@ -164,8 +169,8 @@ const OurLeader = () => {
             Our Board of Advisors
           </h1>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
-            {advisors.map((advisor) => (
-              <ProfileCard key={advisor.id} person={advisor} />
+            {advisors?.map((advisor) => (
+              <ProfileCard key={advisor?.id} person={advisor} />
             ))}
           </div>
         </section>

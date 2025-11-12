@@ -1,24 +1,24 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { BlocksRenderer } from '@strapi/blocks-react-renderer';
-import { 
-  Calendar, 
-  User, 
-  Folder, 
+import React, { useState, useEffect, useMemo } from "react";
+import { useParams, Link } from "react-router-dom";
+import { BlocksRenderer } from "@strapi/blocks-react-renderer";
+import {
+  Calendar,
+  User,
+  Folder,
   ArrowLeft,
   Clock,
-  ArrowUpRight 
-} from 'lucide-react';
-import { newsApi, getImageUrl, extractTextFromContent } from '../../api/newsApi';
+  ArrowUpRight,
+} from "lucide-react";
+import { newsApi, getImageUrl } from "../../api/newsApi";
 
 // Optimized Image Component with lazy loading and error handling
-const OptimizedImage = ({ 
-  src, 
-  alt, 
-  className = "", 
-  width, 
+const OptimizedImage = ({
+  src,
+  alt,
+  className = "",
+  width,
   height,
-  ...props 
+  ...props
 }) => {
   const [imageError, setImageError] = useState(false);
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -31,7 +31,7 @@ const OptimizedImage = ({
     setImageLoaded(true);
   };
 
-  const imageSrc = imageError ? '/assets/randomblog.jpg' : getImageUrl(src);
+  const imageSrc = imageError ? "/assets/randomblog.jpg" : getImageUrl(src);
 
   return (
     <div className={`relative overflow-hidden ${className}`}>
@@ -44,8 +44,8 @@ const OptimizedImage = ({
         onError={handleError}
         onLoad={handleLoad}
         className={`w-full h-full object-cover transition-opacity duration-300 ${
-          imageLoaded ? 'opacity-100' : 'opacity-0'
-        } ${props.onClick ? 'cursor-pointer' : ''}`}
+          imageLoaded ? "opacity-100" : "opacity-0"
+        } ${props.onClick ? "cursor-pointer" : ""}`}
         {...props}
       />
       {!imageLoaded && (
@@ -59,13 +59,13 @@ const OptimizedImage = ({
 const SimilarNewsCard = React.memo(({ article }) => {
   const formatDate = useMemo(() => {
     try {
-      return new Date(article.publishedDate).toLocaleDateString('en-GB', {
-        day: 'numeric',
-        month: 'short',
-        year: 'numeric'
+      return new Date(article.publishedDate).toLocaleDateString("en-GB", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
       });
     } catch {
-      return 'Recent';
+      return "Recent";
     }
   }, [article.publishedDate]);
 
@@ -83,7 +83,7 @@ const SimilarNewsCard = React.memo(({ article }) => {
           {article.title}
         </h3>
         <p className="text-gray-400 text-sm mb-4 line-clamp-3 flex-grow">
-          {article.summary || 'Read more about this related topic...'}
+          {article.summary || "Read more about this related topic..."}
         </p>
         <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-800">
           <div className="flex items-center text-sm text-gray-500">
@@ -103,7 +103,7 @@ const SimilarNewsCard = React.memo(({ article }) => {
   );
 });
 
-SimilarNewsCard.displayName = 'SimilarNewsCard';
+SimilarNewsCard.displayName = "SimilarNewsCard";
 
 const SingleNewsPage = () => {
   const { id } = useParams();
@@ -115,8 +115,8 @@ const SingleNewsPage = () => {
   useEffect(() => {
     const fetchNewsData = async () => {
       // Early return for invalid ID
-      if (!id || id === 'undefined') {
-        setError('Invalid news ID');
+      if (!id || id === "undefined") {
+        setError("Invalid news ID");
         setLoading(false);
         return;
       }
@@ -124,30 +124,30 @@ const SingleNewsPage = () => {
       try {
         setLoading(true);
         setError(null);
-        
+
         const newsData = await newsApi.getNewsById(id);
-        
+
         if (!newsData) {
-          setError('News article not found');
+          setError("News article not found");
           return;
         }
 
         setNews(newsData);
-        
+
         // Use similarNews from API response first, then fallback to category-based
         if (newsData.similarNews?.length > 0) {
           setSimilarNews(newsData.similarNews);
         } else if (newsData.categories?.length > 0) {
           const similar = newsApi.getSimilarNews(
-            newsData.id, 
-            newsData.categories[0]?.name, 
+            newsData.id,
+            newsData.categories[0]?.name,
             3
           );
           setSimilarNews(similar);
         }
       } catch (err) {
-        console.error('Error fetching news:', err);
-        setError('Failed to load news article');
+        console.error("Error fetching news:", err);
+        setError("Failed to load news article");
       } finally {
         setLoading(false);
       }
@@ -164,21 +164,24 @@ const SingleNewsPage = () => {
           <div className="animate-pulse space-y-8">
             {/* Back button skeleton */}
             <div className="h-6 bg-backgroundSecondary rounded w-24"></div>
-            
+
             {/* Header skeleton */}
             <div className="space-y-4">
               <div className="h-8 bg-backgroundSecondary rounded w-1/3"></div>
               <div className="h-4 bg-backgroundSecondary rounded w-1/4"></div>
               <div className="h-12 bg-backgroundSecondary rounded w-3/4"></div>
             </div>
-            
+
             {/* Image skeleton */}
             <div className="h-96 bg-backgroundSecondary rounded-2xl"></div>
-            
+
             {/* Content skeleton */}
             <div className="space-y-3">
               {[...Array(6)].map((_, i) => (
-                <div key={i} className="h-4 bg-backgroundSecondary rounded w-full"></div>
+                <div
+                  key={i}
+                  className="h-4 bg-backgroundSecondary rounded w-full"
+                ></div>
               ))}
             </div>
           </div>
@@ -193,11 +196,15 @@ const SingleNewsPage = () => {
       <div className="min-h-screen bg-backgroundPrimary pt-20 flex items-center justify-center">
         <div className="text-center max-w-md mx-auto px-4">
           <div className="bg-red-500/10 border border-red-500/50 rounded-lg p-6 mb-6">
-            <h1 className="text-2xl font-bold text-white mb-2">Article Not Found</h1>
-            <p className="text-gray-400">{error || 'The requested article could not be found.'}</p>
+            <h1 className="text-2xl font-bold text-white mb-2">
+              Article Not Found
+            </h1>
+            <p className="text-gray-400">
+              {error || "The requested article could not be found."}
+            </p>
           </div>
-          <Link 
-            to="/news" 
+          <Link
+            to="/news"
             className="inline-flex items-center px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-all duration-200 hover:scale-105"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -213,8 +220,8 @@ const SingleNewsPage = () => {
       {/* Back Button */}
       <div className="border-b border-gray-800 sticky top-0 bg-backgroundPrimary/95 backdrop-blur-sm z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <Link 
-            to="/news" 
+          <Link
+            to="/news"
             className="inline-flex items-center text-purple-400 hover:text-purple-300 transition-all duration-200 hover:translate-x-1 group"
           >
             <ArrowLeft className="w-4 h-4 mr-2 transition-transform duration-200 group-hover:-translate-x-1" />
@@ -231,7 +238,7 @@ const SingleNewsPage = () => {
           {news.categories?.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-6">
               {news.categories.map((category) => (
-                <span 
+                <span
                   key={category.id}
                   className="inline-flex items-center px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 text-sm font-medium border border-purple-500/30"
                 >
@@ -264,8 +271,6 @@ const SingleNewsPage = () => {
               <Calendar className="w-4 h-4 mr-2" />
               <span>{news.publishedDate}</span>
             </div>
-
-
           </div>
         </header>
 
@@ -301,19 +306,19 @@ const SingleNewsPage = () => {
                     );
                   },
                   list: ({ children, format }) => {
-                    const ListTag = format === 'unordered' ? 'ul' : 'ol';
+                    const ListTag = format === "unordered" ? "ul" : "ol";
                     return (
                       <ListTag className="text-gray-300 mb-6 space-y-2">
                         {children}
                       </ListTag>
                     );
                   },
-                  'list-item': ({ children }) => (
+                  "list-item": ({ children }) => (
                     <li className="text-gray-300">{children}</li>
                   ),
                   link: ({ children, url }) => (
-                    <a 
-                      href={url} 
+                    <a
+                      href={url}
                       className="text-purple-400 hover:text-purple-300 underline transition-colors duration-200"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -335,7 +340,9 @@ const SingleNewsPage = () => {
                 }}
               />
             ) : (
-              <p className="text-gray-300 leading-relaxed mb-4">{news.content}</p>
+              <p className="text-gray-300 leading-relaxed mb-4">
+                {news.content}
+              </p>
             )}
           </div>
         </div>
@@ -360,7 +367,9 @@ const SingleNewsPage = () => {
         {/* Author Bio */}
         {news.authorInfo && (
           <div className="mt-12 p-6 bg-backgroundSecondary rounded-2xl border border-gray-800">
-            <h3 className="text-xl font-semibold text-white mb-4">About the Author</h3>
+            <h3 className="text-xl font-semibold text-white mb-4">
+              About the Author
+            </h3>
             <div className="flex items-start gap-4">
               {news.authorInfo.profile_picture && (
                 <OptimizedImage
@@ -370,7 +379,9 @@ const SingleNewsPage = () => {
                 />
               )}
               <div className="flex-grow">
-                <h4 className="text-lg font-medium text-white">{news.authorInfo.name}</h4>
+                <h4 className="text-lg font-medium text-white">
+                  {news.authorInfo.name}
+                </h4>
                 {news.authorInfo.bio && (
                   <div className="text-gray-400 mt-2">
                     {Array.isArray(news.authorInfo.bio) ? (

@@ -1,26 +1,24 @@
-import React from 'react'
-import HeroSection from './Components/HeroSection'
-import FAQSection from '../../Components/Common/FaqSection'
-import CtaBanner from './Components/CtaBanner'
-import Resources from '../Home/Component/Resources'
-import TrustedBrands from '../Home/Component/TrustedBrands'
-import UaeDeskSection from './Components/UaeDeskSection'
-import HowWeWork from './Components/HowWeWork'
-import OurService from './Components/OurService'
+import HeroSection from "./Components/HeroSection";
+import FAQSection from "../../Components/Common/FaqSection";
+import CtaBanner from "./Components/CtaBanner";
+import Resources from "../Home/Component/Resources";
+import TrustedBrands from "../Home/Component/TrustedBrands";
+import UaeDeskSection from "./Components/UaeDeskSection";
+import HowWeWork from "./Components/HowWeWork";
+import OurService from "./Components/OurService";
 function Index() {
   return (
     <>
-        <HeroSection />
-        <TrustedBrands/>
-        <UaeDeskSection/>
-        <OurService />
-        <HowWeWork/>
-        <Resources/>
-        <FAQSection />
-        <CtaBanner/>
-       
+      <HeroSection />
+      <TrustedBrands />
+      <UaeDeskSection />
+      <OurService />
+      <HowWeWork />
+      <Resources />
+      <FAQSection />
+      <CtaBanner />
     </>
-  )
+  );
 }
 
-export default Index
+export default Index;

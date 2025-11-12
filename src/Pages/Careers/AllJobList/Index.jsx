@@ -1,35 +1,34 @@
-import React, { useRef, useState } from 'react';
-import HeroSection from './Components/HeroSection';
-import AllJobList from './Components/AllJobList';
-import BenefitsSection from './Components/BenefitsSection';
-import AboutUsSection from './Components/AboutUsSection';
-import ContactSection from './Components/ContactSection';
+import { useRef, useState } from "react";
+import HeroSection from "./Components/HeroSection";
+import AllJobList from "./Components/AllJobList";
+import BenefitsSection from "./Components/BenefitsSection";
+import AboutUsSection from "./Components/AboutUsSection";
+import ContactSection from "./Components/ContactSection";
 
 const Index = () => {
-
   const jobListRef = useRef(null);
   const aboutUsRef = useRef(null);
   const contactRef = useRef(null);
   const [showContact, setShowContact] = useState(false);
 
   const scrollToJobs = () => {
-    jobListRef.current?.scrollIntoView({ behavior: 'smooth' });
+    jobListRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollToAboutUs = () => {
-    aboutUsRef.current?.scrollIntoView({ behavior: 'smooth' });
+    aboutUsRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   const scrollToContact = () => {
     setShowContact(true);
     setTimeout(() => {
-      contactRef.current?.scrollIntoView({ behavior: 'smooth' });
+      contactRef.current?.scrollIntoView({ behavior: "smooth" });
     }, 100);
   };
 
   return (
     <div className="min-h-screen bg-backgroundPrimary">
-      <HeroSection 
+      <HeroSection
         onViewJobsClick={scrollToJobs}
         onLearnAboutClick={scrollToAboutUs}
         onContactClick={scrollToContact}
@@ -47,7 +46,6 @@ const Index = () => {
         </div>
       )}
     </div>
-
   );
 };
 

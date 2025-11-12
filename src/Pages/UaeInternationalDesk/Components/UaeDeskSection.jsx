@@ -1,5 +1,9 @@
-import React from "react";
-import { FaBuilding, FaCheckCircle, FaClipboardCheck, FaLifeRing } from "react-icons/fa";
+import {
+  FaBuilding,
+  FaCheckCircle,
+  FaClipboardCheck,
+  FaLifeRing,
+} from "react-icons/fa";
 
 const UaeDeskSection = () => {
   const features = [
@@ -28,19 +32,25 @@ const UaeDeskSection = () => {
           Why Choose Our UAE Desk
         </h2>
         <p className="text-gray-300 max-w-2xl mx-auto mb-12 text-sm md:text-base">
-          Expanding your business to the UAE requires strategic structuring, compliance, 
-          and accurate financial governance. Our UAE Desk offers end-to-end business setup 
-          and tax services, ensuring you stay compliant and confident while focusing on growth.
+          Expanding your business to the UAE requires strategic structuring,
+          compliance, and accurate financial governance. Our UAE Desk offers
+          end-to-end business setup and tax services, ensuring you stay
+          compliant and confident while focusing on growth.
         </p>
 
         {/* Features with dotted arrows */}
         <div className="relative flex flex-wrap justify-center items-center gap-12 md:gap-16">
           {features.map((item, index) => (
-            <div key={index} className="flex flex-col items-center text-center space-y-4 relative">
+            <div
+              key={index}
+              className="flex flex-col items-center text-center space-y-4 relative"
+            >
               <div className="bg-purple-900/30 p-5 rounded-full relative z-10">
                 {item.icon}
               </div>
-              <p className="text-sm md:text-base text-gray-200 w-40">{item.title}</p>
+              <p className="text-sm md:text-base text-gray-200 w-40">
+                {item.title}
+              </p>
 
               {/* Add curved dotted connector except last */}
               {index < features.length - 1 && (
@@ -66,7 +76,6 @@ const UaeDeskSection = () => {
                   </span>
                 </div>
               )}
-
             </div>
           ))}
         </div>
@@ -76,4 +85,3 @@ const UaeDeskSection = () => {
 };
 
 export default UaeDeskSection;
-

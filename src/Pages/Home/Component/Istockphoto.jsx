@@ -1,4 +1,3 @@
-import React from "react";
 import IstockBackground from "../../../assets/istockphoto.png";
 
 function Istockphoto() {

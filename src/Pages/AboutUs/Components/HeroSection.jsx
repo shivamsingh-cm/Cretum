@@ -1,56 +1,13 @@
-// import React from 'react';
-// import AboutBackground from '../../../assets/careerbg.png';
-
-// function HeroSection() {
-//   return (
-//     <section className="w-full bg-backgroundPrimary">
-      
-//       {/* Text Content */}
-//       <div className="flex flex-col justify-center items-center text-center text-white px-4 sm:px-6 lg:px-12 max-w-5xl mx-auto py-16 md:py-20">
-//         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-//           Simplifying Growth Through
-//           <span className="block text-buttonBackground mt-2">
-//             Clarity and Compliance
-//           </span>
-//         </h1>
-//         <p className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 leading-relaxed max-w-3xl">
-//           At Cretum Advisory, we believe that financial and regulatory complexities shouldn’t
-//           hold back innovation. Founded in 2017, we’ve spent the last eight years helping
-//           startups, SMEs, and large enterprises navigate India’s fast-evolving tax and financial
-//           landscape with clarity, accuracy, and confidence.
-//         </p>
-//       </div>
-
-//       {/* Background Image */}
-//       <div className="w-full">
-//         <img
-//           src={AboutBackground}
-//           alt="Background"
-//           loading="lazy"
-//           className="w-full h-96 object-cover"
-//         />
-//       </div>
-//     </section>
-//   );
-// }
-
-// export default HeroSection;
-
-
-
-
-
-
-import React, { useState, useEffect } from 'react';
-import AboutBackground from '../../../assets/careerbg.webp';
+import { useState, useEffect } from "react";
+import AboutBackground from "../../../assets/careerbg.webp";
 
 function HeroSection() {
   const staticText = "Simplifying Growth Through";
   const dynamicText = "Clarity and Compliance";
 
-  const typingSpeed = 100;   // typing speed per character
-  const deletingSpeed = 50;  // deleting speed per character
-  const pauseDuration = 1800;    // pause before deleting/typing next
+  const typingSpeed = 100; // typing speed per character
+  const deletingSpeed = 50; // deleting speed per character
+  const pauseDuration = 1800; // pause before deleting/typing next
 
   const [staticDisplayed, setStaticDisplayed] = useState("");
   const [dynamicDisplayed, setDynamicDisplayed] = useState("");
@@ -69,40 +26,36 @@ function HeroSection() {
     }
   }, [staticDisplayed, staticText]);
 
- 
-  
-useEffect(() => {
-  if (!staticFinished) return;
+  useEffect(() => {
+    if (!staticFinished) return;
 
-  let timeout;
+    let timeout;
 
-  if (!isDeleting && dynamicDisplayed.length < dynamicText.length) {
-    // Typing
-    timeout = setTimeout(() => {
-      setDynamicDisplayed(dynamicText.slice(0, dynamicDisplayed.length + 1));
-    }, typingSpeed);
-  } else if (!isDeleting && dynamicDisplayed.length === dynamicText.length) {
-    // Pause before deleting
-    timeout = setTimeout(() => {
-      setIsDeleting(true);
-    }, pauseDuration); //  small delay before erase
-  } else if (isDeleting && dynamicDisplayed.length > 0) {
-    // Deleting
-    timeout = setTimeout(() => {
-      setDynamicDisplayed(dynamicText.slice(0, dynamicDisplayed.length - 1));
-    }, deletingSpeed);
-  } else if (isDeleting && dynamicDisplayed.length === 0) {
-    // Start typing again
-    setIsDeleting(false);
-  }
+    if (!isDeleting && dynamicDisplayed.length < dynamicText.length) {
+      // Typing
+      timeout = setTimeout(() => {
+        setDynamicDisplayed(dynamicText.slice(0, dynamicDisplayed.length + 1));
+      }, typingSpeed);
+    } else if (!isDeleting && dynamicDisplayed.length === dynamicText.length) {
+      // Pause before deleting
+      timeout = setTimeout(() => {
+        setIsDeleting(true);
+      }, pauseDuration); //  small delay before erase
+    } else if (isDeleting && dynamicDisplayed.length > 0) {
+      // Deleting
+      timeout = setTimeout(() => {
+        setDynamicDisplayed(dynamicText.slice(0, dynamicDisplayed.length - 1));
+      }, deletingSpeed);
+    } else if (isDeleting && dynamicDisplayed.length === 0) {
+      // Start typing again
+      setIsDeleting(false);
+    }
 
-  return () => clearTimeout(timeout);
-}, [dynamicDisplayed, isDeleting, staticFinished, dynamicText]);
-
+    return () => clearTimeout(timeout);
+  }, [dynamicDisplayed, isDeleting, staticFinished, dynamicText]);
 
   return (
     <section className="w-full bg-backgroundPrimary ">
-      
       {/* Text Content */}
       <div className="flex flex-col justify-center items-center text-center text-white px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto py-16 md:py-20">
         <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-4 mt-10">
@@ -113,10 +66,11 @@ useEffect(() => {
           </span>
         </h1>
         <p className="text-sm sm:text-base md:text-lg lg:text-lg font-normal text-white/90 leading-relaxed max-w-2xl">
-          At Cretum Advisory, we believe that financial and regulatory complexities shouldn’t
-          hold back innovation. Founded in 2017, we’ve spent the last eight years helping
-          startups, SMEs, and large enterprises navigate India’s fast-evolving tax and financial
-          landscape with clarity, accuracy, and confidence.
+          At Cretum Advisory, we believe that financial and regulatory
+          complexities shouldn’t hold back innovation. Founded in 2017, we’ve
+          spent the last eight years helping startups, SMEs, and large
+          enterprises navigate India’s fast-evolving tax and financial landscape
+          with clarity, accuracy, and confidence.
         </p>
       </div>
 
@@ -134,12 +88,3 @@ useEffect(() => {
 }
 
 export default HeroSection;
-
-
-
-
-
-
-
-
-

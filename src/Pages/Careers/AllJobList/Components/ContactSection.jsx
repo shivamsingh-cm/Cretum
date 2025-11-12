@@ -1,13 +1,12 @@
-// components/ContactSection.jsx
-import React, { useState } from 'react';
+import { useState } from "react";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    company: "",
+    subject: "",
+    message: "",
   });
 
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -16,26 +15,26 @@ const ContactSection = () => {
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
-      setSubmitStatus('success');
+      setSubmitStatus("success");
       setFormData({
-        name: '',
-        email: '',
-        company: '',
-        subject: '',
-        message: ''
+        name: "",
+        email: "",
+        company: "",
+        subject: "",
+        message: "",
       });
-      
+
       // Reset status after 5 seconds
       setTimeout(() => setSubmitStatus(null), 5000);
     }, 2000);
@@ -43,50 +42,50 @@ const ContactSection = () => {
 
   const contactMethods = [
     {
-      icon: '📧',
-      title: 'Email Us',
-      details: 'hello@cretumadvisory.com',
-      description: 'Send us an email anytime'
+      icon: "📧",
+      title: "Email Us",
+      details: "hello@cretumadvisory.com",
+      description: "Send us an email anytime",
     },
     {
-      icon: '📞',
-      title: 'Call Us',
-      details: '+1 (555) 123-4567',
-      description: 'Mon-Fri from 9am to 6pm'
+      icon: "📞",
+      title: "Call Us",
+      details: "+1 (555) 123-4567",
+      description: "Mon-Fri from 9am to 6pm",
     },
     {
-      icon: '🏢',
-      title: 'Visit Us',
-      details: '123 Business District',
-      description: 'San Francisco, CA 94105'
+      icon: "🏢",
+      title: "Visit Us",
+      details: "123 Business District",
+      description: "San Francisco, CA 94105",
     },
     {
-      icon: '💬',
-      title: 'Live Chat',
-      details: 'Start Chat',
-      description: 'Available 24/7 for urgent matters'
-    }
+      icon: "💬",
+      title: "Live Chat",
+      details: "Start Chat",
+      description: "Available 24/7 for urgent matters",
+    },
   ];
 
   const offices = [
     {
-      city: 'Delhi',
-      address: '123 Business District, SF 94105',
-      phone: '+1 (555) 123-4567',
-      email: 'sf@cretumadvisory.com'
+      city: "Delhi",
+      address: "123 Business District, SF 94105",
+      phone: "+1 (555) 123-4567",
+      email: "sf@cretumadvisory.com",
     },
     {
-      city: 'Noida',
-      address: '456 Manhattan Ave, NY 10001',
-      phone: '+1 (555) 123-4568',
-      email: 'ny@cretumadvisory.com'
+      city: "Noida",
+      address: "456 Manhattan Ave, NY 10001",
+      phone: "+1 (555) 123-4568",
+      email: "ny@cretumadvisory.com",
     },
     {
-      city: 'Gurugram',
-      address: '789 Business Street, London EC2A',
-      phone: '+44 20 7946 0958',
-      email: 'london@cretumadvisory.com'
-    }
+      city: "Gurugram",
+      address: "789 Business Street, London EC2A",
+      phone: "+44 20 7946 0958",
+      email: "london@cretumadvisory.com",
+    },
   ];
 
   return (
@@ -98,7 +97,8 @@ const ContactSection = () => {
             Get In Touch
           </h2>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-            Ready to transform your business? Let's start a conversation about how we can help you achieve your goals.
+            Ready to transform your business? Let's start a conversation about
+            how we can help you achieve your goals.
           </p>
         </div>
 
@@ -106,12 +106,15 @@ const ContactSection = () => {
           {/* Contact Form */}
           <div className="fade-in-up">
             <div className="bg-backgroundSecondary rounded-2xl p-8 shadow-2xl">
-              <h3 className="text-2xl font-bold text-white mb-6">Send us a Message</h3>
-              
-              {submitStatus === 'success' && (
+              <h3 className="text-2xl font-bold text-white mb-6">
+                Send us a Message
+              </h3>
+
+              {submitStatus === "success" && (
                 <div className="mb-6 p-4 rounded-lg bg-green-900/20 border border-green-500">
                   <p className="text-green-400 font-semibold">
-                    ✅ Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                    ✅ Thank you! Your message has been sent successfully. We'll
+                    get back to you within 24 hours.
                   </p>
                 </div>
               )}
@@ -119,7 +122,10 @@ const ContactSection = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-white font-semibold mb-2" htmlFor="name">
+                    <label
+                      className="block text-white font-semibold mb-2"
+                      htmlFor="name"
+                    >
                       Full Name *
                     </label>
                     <input
@@ -134,7 +140,10 @@ const ContactSection = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-white font-semibold mb-2" htmlFor="email">
+                    <label
+                      className="block text-white font-semibold mb-2"
+                      htmlFor="email"
+                    >
                       Email Address *
                     </label>
                     <input
@@ -152,7 +161,10 @@ const ContactSection = () => {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-white font-semibold mb-2" htmlFor="company">
+                    <label
+                      className="block text-white font-semibold mb-2"
+                      htmlFor="company"
+                    >
                       Company
                     </label>
                     <input
@@ -166,7 +178,10 @@ const ContactSection = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-white font-semibold mb-2" htmlFor="subject">
+                    <label
+                      className="block text-white font-semibold mb-2"
+                      htmlFor="subject"
+                    >
                       Subject *
                     </label>
                     <select
@@ -188,7 +203,10 @@ const ContactSection = () => {
                 </div>
 
                 <div>
-                  <label className="block text-white font-semibold mb-2" htmlFor="message">
+                  <label
+                    className="block text-white font-semibold mb-2"
+                    htmlFor="message"
+                  >
                     Message *
                   </label>
                   <textarea
@@ -214,7 +232,7 @@ const ContactSection = () => {
                       Sending...
                     </span>
                   ) : (
-                    'Send Message'
+                    "Send Message"
                   )}
                 </button>
               </form>
@@ -226,26 +244,28 @@ const ContactSection = () => {
             <div className="space-y-8">
               {/* Contact Methods */}
               <div>
-                <h3 className="text-2xl font-bold text-white mb-6">Quick Contact</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  Quick Contact
+                </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {contactMethods.map((method, index) => (
+                  {contactMethods?.map((method, index) => (
                     <div
                       key={index}
                       className="p-4 rounded-xl bg-backgroundSecondary hover:bg-backgroundPrimary transition-all duration-300 group hover:scale-105 cursor-pointer"
                     >
                       <div className="flex items-start gap-3">
                         <div className="text-2xl group-hover:scale-110 transition-transform duration-300">
-                          {method.icon}
+                          {method?.icon}
                         </div>
                         <div>
                           <h4 className="font-semibold text-white group-hover:text-buttonBackground transition-colors duration-300">
-                            {method.title}
+                            {method?.title}
                           </h4>
                           <p className="text-buttonBackground font-medium text-sm">
-                            {method.details}
+                            {method?.details}
                           </p>
                           <p className="text-gray-400 text-sm mt-1">
-                            {method.description}
+                            {method?.description}
                           </p>
                         </div>
                       </div>
@@ -256,33 +276,33 @@ const ContactSection = () => {
 
               {/* Offices */}
               <div>
-                <h3 className="text-2xl font-bold text-white mb-6">Our Offices</h3>
+                <h3 className="text-2xl font-bold text-white mb-6">
+                  Our Offices
+                </h3>
                 <div className="space-y-4">
-                  {offices.map((office, index) => (
+                  {offices?.map((office, index) => (
                     <div
                       key={index}
                       className="p-4 rounded-xl bg-backgroundSecondary hover:bg-backgroundPrimary transition-all duration-300 group"
                     >
                       <h4 className="font-bold text-white text-lg mb-2 group-hover:text-buttonBackground transition-colors duration-300">
-                        {office.city}
+                        {office?.city}
                       </h4>
                       <div className="space-y-1 text-gray-300">
                         <p className="flex items-center gap-2">
-                          <span>📍</span> {office.address}
+                          <span>📍</span> {office?.address}
                         </p>
                         <p className="flex items-center gap-2">
-                          <span>📞</span> {office.phone}
+                          <span>📞</span> {office?.phone}
                         </p>
                         <p className="flex items-center gap-2">
-                          <span>📧</span> {office.email}
+                          <span>📧</span> {office?.email}
                         </p>
                       </div>
                     </div>
                   ))}
                 </div>
               </div>
-
-        
             </div>
           </div>
         </div>
@@ -292,8 +312,12 @@ const ContactSection = () => {
           <div className="inline-flex items-center gap-4 p-6 rounded-2xl bg-backgroundSecondary">
             <div className="text-3xl">⚡</div>
             <div className="text-left">
-              <h4 className="text-white font-bold text-lg">Quick Response Guarantee</h4>
-              <p className="text-gray-300">We respond to all inquiries within 24 hours</p>
+              <h4 className="text-white font-bold text-lg">
+                Quick Response Guarantee
+              </h4>
+              <p className="text-gray-300">
+                We respond to all inquiries within 24 hours
+              </p>
             </div>
           </div>
         </div>

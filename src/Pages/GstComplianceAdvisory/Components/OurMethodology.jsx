@@ -1,83 +1,3 @@
-// import React from "react";
-// import { FaBuilding, FaCheckCircle, FaClipboardCheck, FaLifeRing } from "react-icons/fa";
-
-// const OurMethodology = () => {
-//   const features = [
-//     {
-//       icon: <FaBuilding className="text-4xl text-buttonBackground" />,
-//       title: "Expert-Led",
-//       discription : "We measure success by tangible outcomes: ₹250Cr+ in refunds secured, 98% audit success rate, and 15-20% more ITC recovered."
-//     },
-//     {
-//       icon: <FaCheckCircle className="text-4xl text-buttonBackground" />,
-//       title: "Tech-Powered",
-//       discription : "Our proprietary AI-driven tools automate reconciliation, identify discrepancies, and maximize ITC utilization with 99.8% accuracy."
-//     },
-//     {
-//       icon: <FaClipboardCheck className="text-4xl text-buttonBackground" />,
-//       title: "Results-Focused",
-//       discription : "We measure success by tangible outcomes: ₹250Cr+ in refunds secured, 98% audit success rate, and 15-20% more ITC recovered."
-//     },
-//   ];
-
-//   return (
-//     <section className="bg-backgroundPrimary text-white py-16 px-6 md:px-12 lg:px-24 relative overflow-hidden">
-//       <div className="max-w-7xl mx-auto text-center  rounded-lg p-8 md:p-12 relative">
-//         <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-//            Our Methodology
-//         </h2>
-//         <p className="text-gray-300 max-w-2xl mx-auto mb-12 text-sm md:text-base">
-//           We combine deep tax expertise with cutting-edge technology to deliver a seamless 
-//             GST experience that transforms compliance into strategic advantage.
-//         </p>
-
-//         {/* Features with dotted arrows */}
-//         <div className="relative flex flex-wrap justify-between items-center gap-12 md:gap-16">
-//           {features.map((item, index) => (
-//             <div key={index} className="flex flex-col items-center text-center space-y-4 relative">
-//               <div className="bg-purple-900/30 p-5 rounded-full relative z-10">
-//                 {item.icon}
-//               </div>
-//               <p className="text-sm md:text-base text-gray-200 w-40">{item.title}</p>
-//               <p>{item.discription}</p>
-
-//               {/* Add curved dotted connector except last */}
-//               {index < features.length - 1 && (
-//                 <div className="hidden md:block absolute top-0 left-[65%] w-36 h-16">
-//                   <svg
-//                     className="w-full h-full"
-//                     viewBox="0 0 50 50"
-//                     fill="none"
-//                     xmlns="http://www.w3.org/2000/svg"
-//                   >
-//                     <path
-//                       d="M0,25 C25,0 75,50 100,25"
-//                       stroke="#A855F7"
-//                       strokeWidth="2"
-//                       strokeDasharray="4 4"
-//                       fill="transparent"
-//                     />
-//                   </svg>
-
-//                   {/* text arrow at end */}
-//                   <span className="absolute right-[-4px] top-[24px] text-purple-400 text-lg font-bold">
-//                     &gt;
-//                   </span>
-//                 </div>
-//               )}
-
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default OurMethodology;
-
-
-import React from "react";
 import {
   FaBuilding,
   FaCheckCircle,
@@ -122,24 +42,24 @@ const OurMethodology = () => {
 
         {/* Features Section */}
         <div className="relative flex flex-col md:flex-row justify-center md:justify-between items-center gap-12 md:gap-12">
-          {features.map((item, index) => (
+          {features?.map((item, index) => (
             <div
               key={index}
               className="flex flex-col items-center text-center space-y-4 relative max-w-[290px]"
             >
               {/* Icon */}
               <div className="bg-purple-900/30 p-5 rounded-full shadow-lg flex items-center justify-center">
-                {item.icon}
+                {item?.icon}
               </div>
 
               {/* Title */}
               <h3 className="text-lg font-semibold text-white">
-                {item.title}
+                {item?.title}
               </h3>
 
               {/* Description */}
               <p className="text-white text-base font-normal leading-relaxed">
-                {item.description}
+                {item?.description}
               </p>
 
               {/* Curved Dotted Connector (only for md+ screens & non-last items) */}

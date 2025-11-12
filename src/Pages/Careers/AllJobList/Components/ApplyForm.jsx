@@ -1,23 +1,22 @@
-
-import React, { useState } from 'react';
+import { useState } from "react";
 
 const ApplyForm = ({ job, onClose }) => {
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    currentCompany: '',
-    currentPosition: '',
-    totalExperience: '',
-    relevantExperience: '',
-    currentSalary: '',
-    expectedSalary: '',
-    noticePeriod: '',
-    portfolioUrl: '',
-    linkedinUrl: '',
-    githubUrl: '',
-    coverLetter: ''
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    currentCompany: "",
+    currentPosition: "",
+    totalExperience: "",
+    relevantExperience: "",
+    currentSalary: "",
+    expectedSalary: "",
+    noticePeriod: "",
+    portfolioUrl: "",
+    linkedinUrl: "",
+    githubUrl: "",
+    coverLetter: "",
   });
 
   const [resume, setResume] = useState(null);
@@ -26,18 +25,18 @@ const ApplyForm = ({ job, onClose }) => {
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    if (file && file.type === 'application/pdf') {
+    if (file && file.type === "application/pdf") {
       setResume(file);
     } else {
-      alert('Please upload a PDF file');
+      alert("Please upload a PDF file");
     }
   };
 
@@ -48,25 +47,25 @@ const ApplyForm = ({ job, onClose }) => {
     // Simulate API call
     setTimeout(() => {
       setIsSubmitting(false);
-      setSubmitStatus('success');
-      
+      setSubmitStatus("success");
+
       // Reset form
       setFormData({
-        firstName: '',
-        lastName: '',
-        email: '',
-        phone: '',
-        currentCompany: '',
-        currentPosition: '',
-        totalExperience: '',
-        relevantExperience: '',
-        currentSalary: '',
-        expectedSalary: '',
-        noticePeriod: '',
-        portfolioUrl: '',
-        linkedinUrl: '',
-        githubUrl: '',
-        coverLetter: ''
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: "",
+        currentCompany: "",
+        currentPosition: "",
+        totalExperience: "",
+        relevantExperience: "",
+        currentSalary: "",
+        expectedSalary: "",
+        noticePeriod: "",
+        portfolioUrl: "",
+        linkedinUrl: "",
+        githubUrl: "",
+        coverLetter: "",
       });
       setResume(null);
 
@@ -78,12 +77,24 @@ const ApplyForm = ({ job, onClose }) => {
   };
 
   const experienceOptions = [
-    '0-1 years', '1-2 years', '2-3 years', '3-4 years', 
-    '4-5 years', '5-7 years', '7-10 years', '10+ years'
+    "0-1 years",
+    "1-2 years",
+    "2-3 years",
+    "3-4 years",
+    "4-5 years",
+    "5-7 years",
+    "7-10 years",
+    "10+ years",
   ];
 
   const noticePeriodOptions = [
-    'Immediately', '15 days', '30 days', '45 days', '60 days', '90 days', '90+ days'
+    "Immediately",
+    "15 days",
+    "30 days",
+    "45 days",
+    "60 days",
+    "90 days",
+    "90+ days",
   ];
 
   return (
@@ -93,8 +104,12 @@ const ApplyForm = ({ job, onClose }) => {
         <div className="sticky top-0 bg-backgroundPrimary border-b border-gray-700 p-6 rounded-t-2xl">
           <div className="flex justify-between items-center">
             <div>
-              <h2 className="text-2xl font-bold text-white">Apply for {job.title}</h2>
-              <p className="text-gray-400">{job.company} • {job.location}</p>
+              <h2 className="text-2xl font-bold text-white">
+                Apply for {job.title}
+              </h2>
+              <p className="text-gray-400">
+                {job.company} • {job.location}
+              </p>
             </div>
             <button
               onClick={onClose}
@@ -107,12 +122,15 @@ const ApplyForm = ({ job, onClose }) => {
 
         {/* Form */}
         <form onSubmit={handleSubmit} className="p-6 space-y-6">
-          {submitStatus === 'success' ? (
+          {submitStatus === "success" ? (
             <div className="text-center py-8">
               <div className="text-6xl mb-4">🎉</div>
-              <h3 className="text-2xl font-bold text-white mb-2">Application Submitted!</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Application Submitted!
+              </h3>
               <p className="text-gray-300 mb-6">
-                Thank you for applying to {job.title}. We'll review your application and get back to you soon.
+                Thank you for applying to {job.title}. We'll review your
+                application and get back to you soon.
               </p>
               <button
                 type="button"
@@ -126,10 +144,14 @@ const ApplyForm = ({ job, onClose }) => {
             <>
               {/* Personal Information */}
               <div className="bg-backgroundSecondary rounded-xl p-6">
-                <h3 className="text-xl font-bold text-white mb-4">Personal Information</h3>
+                <h3 className="text-xl font-bold text-white mb-4">
+                  Personal Information
+                </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-white font-semibold mb-2">First Name *</label>
+                    <label className="block text-white font-semibold mb-2">
+                      First Name *
+                    </label>
                     <input
                       type="text"
                       name="firstName"
@@ -141,7 +163,9 @@ const ApplyForm = ({ job, onClose }) => {
                     />
                   </div>
                   <div>
-                    <label className="block text-white font-semibold mb-2">Last Name *</label>
+                    <label className="block text-white font-semibold mb-2">
+                      Last Name *
+                    </label>
                     <input
                       type="text"
                       name="lastName"
@@ -153,7 +177,9 @@ const ApplyForm = ({ job, onClose }) => {
                     />
                   </div>
                   <div>
-                    <label className="block text-white font-semibold mb-2">Email *</label>
+                    <label className="block text-white font-semibold mb-2">
+                      Email *
+                    </label>
                     <input
                       type="email"
                       name="email"
@@ -165,7 +191,9 @@ const ApplyForm = ({ job, onClose }) => {
                     />
                   </div>
                   <div>
-                    <label className="block text-white font-semibold mb-2">Phone *</label>
+                    <label className="block text-white font-semibold mb-2">
+                      Phone *
+                    </label>
                     <input
                       type="tel"
                       name="phone"
@@ -181,10 +209,14 @@ const ApplyForm = ({ job, onClose }) => {
 
               {/* Professional Information */}
               <div className="bg-backgroundSecondary rounded-xl p-6">
-                <h3 className="text-xl font-bold text-white mb-4">Professional Information</h3>
+                <h3 className="text-xl font-bold text-white mb-4">
+                  Professional Information
+                </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-white font-semibold mb-2">Current Company</label>
+                    <label className="block text-white font-semibold mb-2">
+                      Current Company
+                    </label>
                     <input
                       type="text"
                       name="currentCompany"
@@ -195,7 +227,9 @@ const ApplyForm = ({ job, onClose }) => {
                     />
                   </div>
                   <div>
-                    <label className="block text-white font-semibold mb-2">Current Position</label>
+                    <label className="block text-white font-semibold mb-2">
+                      Current Position
+                    </label>
                     <input
                       type="text"
                       name="currentPosition"
@@ -206,7 +240,9 @@ const ApplyForm = ({ job, onClose }) => {
                     />
                   </div>
                   <div>
-                    <label className="block text-white font-semibold mb-2">Total Experience *</label>
+                    <label className="block text-white font-semibold mb-2">
+                      Total Experience *
+                    </label>
                     <select
                       name="totalExperience"
                       required
@@ -215,13 +251,17 @@ const ApplyForm = ({ job, onClose }) => {
                       className="w-full px-4 py-3 rounded-lg bg-backgroundPrimary border border-gray-600 text-white focus:outline-none focus:border-buttonBackground transition-colors duration-300"
                     >
                       <option value="">Select total experience</option>
-                      {experienceOptions.map(exp => (
-                        <option key={exp} value={exp}>{exp}</option>
+                      {experienceOptions.map((exp) => (
+                        <option key={exp} value={exp}>
+                          {exp}
+                        </option>
                       ))}
                     </select>
                   </div>
                   <div>
-                    <label className="block text-white font-semibold mb-2">Relevant Experience *</label>
+                    <label className="block text-white font-semibold mb-2">
+                      Relevant Experience *
+                    </label>
                     <select
                       name="relevantExperience"
                       required
@@ -230,13 +270,17 @@ const ApplyForm = ({ job, onClose }) => {
                       className="w-full px-4 py-3 rounded-lg bg-backgroundPrimary border border-gray-600 text-white focus:outline-none focus:border-buttonBackground transition-colors duration-300"
                     >
                       <option value="">Select relevant experience</option>
-                      {experienceOptions.map(exp => (
-                        <option key={exp} value={exp}>{exp}</option>
+                      {experienceOptions.map((exp) => (
+                        <option key={exp} value={exp}>
+                          {exp}
+                        </option>
                       ))}
                     </select>
                   </div>
                   <div>
-                    <label className="block text-white font-semibold mb-2">Current Salary (₹)</label>
+                    <label className="block text-white font-semibold mb-2">
+                      Current Salary (₹)
+                    </label>
                     <input
                       type="text"
                       name="currentSalary"
@@ -247,7 +291,9 @@ const ApplyForm = ({ job, onClose }) => {
                     />
                   </div>
                   <div>
-                    <label className="block text-white font-semibold mb-2">Expected Salary (₹) *</label>
+                    <label className="block text-white font-semibold mb-2">
+                      Expected Salary (₹) *
+                    </label>
                     <input
                       type="text"
                       name="expectedSalary"
@@ -259,7 +305,9 @@ const ApplyForm = ({ job, onClose }) => {
                     />
                   </div>
                   <div className="md:col-span-2">
-                    <label className="block text-white font-semibold mb-2">Notice Period *</label>
+                    <label className="block text-white font-semibold mb-2">
+                      Notice Period *
+                    </label>
                     <select
                       name="noticePeriod"
                       required
@@ -268,8 +316,10 @@ const ApplyForm = ({ job, onClose }) => {
                       className="w-full px-4 py-3 rounded-lg bg-backgroundPrimary border border-gray-600 text-white focus:outline-none focus:border-buttonBackground transition-colors duration-300"
                     >
                       <option value="">Select notice period</option>
-                      {noticePeriodOptions.map(period => (
-                        <option key={period} value={period}>{period}</option>
+                      {noticePeriodOptions.map((period) => (
+                        <option key={period} value={period}>
+                          {period}
+                        </option>
                       ))}
                     </select>
                   </div>
@@ -278,10 +328,14 @@ const ApplyForm = ({ job, onClose }) => {
 
               {/* Resume Upload */}
               <div className="bg-backgroundSecondary rounded-xl p-6">
-                <h3 className="text-xl font-bold text-white mb-4">Resume & Portfolio</h3>
+                <h3 className="text-xl font-bold text-white mb-4">
+                  Resume & Portfolio
+                </h3>
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-white font-semibold mb-2">Upload Resume (PDF only) *</label>
+                    <label className="block text-white font-semibold mb-2">
+                      Upload Resume (PDF only) *
+                    </label>
                     <div className="border-2 border-dashed border-gray-600 rounded-lg p-6 text-center hover:border-buttonBackground transition-colors duration-300">
                       <input
                         type="file"
@@ -293,17 +347,25 @@ const ApplyForm = ({ job, onClose }) => {
                       />
                       <label htmlFor="resume-upload" className="cursor-pointer">
                         <div className="text-4xl mb-2">📄</div>
-                        <p className="text-white font-semibold">Click to upload resume</p>
-                        <p className="text-gray-400 text-sm">PDF files only (Max: 5MB)</p>
+                        <p className="text-white font-semibold">
+                          Click to upload resume
+                        </p>
+                        <p className="text-gray-400 text-sm">
+                          PDF files only (Max: 5MB)
+                        </p>
                         {resume && (
-                          <p className="text-green-400 text-sm mt-2">✓ {resume.name}</p>
+                          <p className="text-green-400 text-sm mt-2">
+                            ✓ {resume.name}
+                          </p>
                         )}
                       </label>
                     </div>
                   </div>
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                     <div>
-                      <label className="block text-white font-semibold mb-2">Portfolio URL</label>
+                      <label className="block text-white font-semibold mb-2">
+                        Portfolio URL
+                      </label>
                       <input
                         type="url"
                         name="portfolioUrl"
@@ -314,7 +376,9 @@ const ApplyForm = ({ job, onClose }) => {
                       />
                     </div>
                     <div>
-                      <label className="block text-white font-semibold mb-2">LinkedIn URL</label>
+                      <label className="block text-white font-semibold mb-2">
+                        LinkedIn URL
+                      </label>
                       <input
                         type="url"
                         name="linkedinUrl"
@@ -325,7 +389,9 @@ const ApplyForm = ({ job, onClose }) => {
                       />
                     </div>
                     <div>
-                      <label className="block text-white font-semibold mb-2">GitHub URL</label>
+                      <label className="block text-white font-semibold mb-2">
+                        GitHub URL
+                      </label>
                       <input
                         type="url"
                         name="githubUrl"
@@ -341,7 +407,9 @@ const ApplyForm = ({ job, onClose }) => {
 
               {/* Cover Letter */}
               <div className="bg-backgroundSecondary rounded-xl p-6">
-                <h3 className="text-xl font-bold text-white mb-4">Cover Letter</h3>
+                <h3 className="text-xl font-bold text-white mb-4">
+                  Cover Letter
+                </h3>
                 <textarea
                   name="coverLetter"
                   rows="6"
@@ -372,7 +440,7 @@ const ApplyForm = ({ job, onClose }) => {
                       Submitting...
                     </span>
                   ) : (
-                    'Submit Application'
+                    "Submit Application"
                   )}
                 </button>
               </div>

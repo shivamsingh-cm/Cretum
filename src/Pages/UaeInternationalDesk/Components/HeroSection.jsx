@@ -1,5 +1,5 @@
-import React, { useRef, useEffect, useState } from "react";
-import MapBase from '../../../assets/mapbase.png';
+import { useRef, useEffect, useState } from "react";
+import MapBase from "../../../assets/mapbase.png";
 import { MapPin } from "lucide-react";
 import Modal from "../../../Components/ScheduleCall/Modal";
 import ScheduleCallForm from "../../../Components/ScheduleCall/ScheduleCallForm";
@@ -12,7 +12,7 @@ const locations = [
 ];
 
 export default function HeroSection() {
-  const [isModalOpen, setIsModalOpen] = useState(false); 
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const mapRef = useRef(null);
   const [mapSize, setMapSize] = useState({ width: 0, height: 0 });
 
@@ -62,16 +62,16 @@ export default function HeroSection() {
             Your Gateway to UAE Business Setup <br /> & Tax Compliance
           </h1>
           <p className="text-white text-base sm:text-lg md:text-xl max-w-3xl mx-auto mt-4">
-            From entity formation to tax filing — we simplify your UAE business 
+            From entity formation to tax filing — we simplify your UAE business
             expansion with expert regulatory, tax, and audit support.
           </p>
         </header>
 
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
-          <button 
-             onClick={()=> setIsModalOpen(true)}
+          <button
+            onClick={() => setIsModalOpen(true)}
             className="bg-buttonBackground rounded-full text-white py-2 px-4"
-            >
+          >
             Schedule a Call
           </button>
           <button className="border-2 border-white rounded-full text-white py-2 px-6">
@@ -89,7 +89,7 @@ export default function HeroSection() {
 
           {/* SVG Curved Lines */}
           <svg className="absolute inset-0 w-full h-full pointer-events-none">
-            {paths.map((d, idx) => (
+            {paths?.map((d, idx) => (
               <path
                 key={idx}
                 d={d}
@@ -102,7 +102,7 @@ export default function HeroSection() {
           </svg>
 
           {/* Location Pins */}
-          {locations.map((loc, idx) => {
+          {locations?.map((loc, idx) => {
             const coords = getPixelCoords(loc);
             return (
               <div
@@ -117,11 +117,9 @@ export default function HeroSection() {
         </div>
       </div>
 
-       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <ScheduleCallForm onSubmit={() => setIsModalOpen(false)} />
       </Modal>
     </div>
   );
 }
-
-

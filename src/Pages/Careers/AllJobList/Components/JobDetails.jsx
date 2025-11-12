@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import ApplyForm from '../Components/ApplyForm'
 
@@ -155,7 +155,7 @@ const JobDetailsPage = () => {
 
           {/* Tags */}
           <div className="flex flex-wrap gap-2 mt-6">
-            {job.tags.map((tag, index) => (
+            {job?.tags?.map((tag, index) => (
               <span
                 key={index}
                 className="px-4 py-2 bg-backgroundPrimary text-gray-300 rounded-full text-sm font-medium"
@@ -185,14 +185,14 @@ const JobDetailsPage = () => {
             {/* Position Overview */}
             <section className="bg-backgroundSecondary rounded-2xl p-8">
               <h2 className="text-2xl font-bold text-white mb-4">Position Overview</h2>
-              <p className="text-gray-300 leading-relaxed">{job.positionOverview}</p>
+              <p className="text-gray-300 leading-relaxed">{job?.positionOverview}</p>
             </section>
 
             {/* Key Responsibilities */}
             <section className="bg-backgroundSecondary rounded-2xl p-8">
               <h2 className="text-2xl font-bold text-white mb-4">Key Responsibilities</h2>
               <ul className="space-y-3">
-                {job.keyResponsibilities.map((responsibility, index) => (
+                {job?.keyResponsibilities?.map((responsibility, index) => (
                   <li key={index} className="flex items-start gap-3 text-gray-300">
                     <span className="text-buttonBackground mt-1">•</span>
                     {responsibility}
@@ -205,7 +205,7 @@ const JobDetailsPage = () => {
             <section className="bg-backgroundSecondary rounded-2xl p-8">
               <h2 className="text-2xl font-bold text-white mb-4">Qualifications & Pre-requisites</h2>
               <ul className="space-y-3">
-                {job.qualifications.map((qualification, index) => (
+                {job?.qualifications?.map((qualification, index) => (
                   <li key={index} className="flex items-start gap-3 text-gray-300">
                     <span className="text-buttonBackground mt-1">•</span>
                     {qualification}
@@ -218,7 +218,7 @@ const JobDetailsPage = () => {
             <section className="bg-backgroundSecondary rounded-2xl p-8">
               <h2 className="text-2xl font-bold text-white mb-4">Preferred Qualifications</h2>
               <ul className="space-y-3">
-                {job.preferredQualifications.map((qualification, index) => (
+                {job?.preferredQualifications?.map((qualification, index) => (
                   <li key={index} className="flex items-start gap-3 text-gray-300">
                     <span className="text-buttonBackground mt-1">•</span>
                     {qualification}

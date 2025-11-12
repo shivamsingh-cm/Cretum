@@ -1,16 +1,4 @@
-// import React from 'react'
-
-// function HeroSection() {
-//   return (
-//     <div>HeroSection</div>
-//   )
-// }
-
-// export default HeroSection
-
-// EventsSection.jsx
-import React from "react";
-import { Check, Users, Briefcase } from "lucide-react";
+import { Check } from "lucide-react";
 
 const EventsWorkshops = () => {
   return (
@@ -21,8 +9,8 @@ const EventsWorkshops = () => {
           Events & Workshops
         </h2>
         <p className="text-gray-300 text-lg font-normal max-w-2xl mx-auto">
-          At Cretum Advisory, we organize exclusive events and workshops tailored for
-          startups, SMEs, and corporates.
+          At Cretum Advisory, we organize exclusive events and workshops
+          tailored for startups, SMEs, and corporates.
         </p>
       </div>
 
@@ -33,6 +21,7 @@ const EventsWorkshops = () => {
           <img
             src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=800&q=80"
             alt="Event audience"
+            loading="lazy"
             className="w-full h-full object-cover rounded-md"
           />
         </div>
@@ -55,27 +44,26 @@ const EventsWorkshops = () => {
 
           <ul className="space-y-3 mb-6 text-white text-xl font-normal">
             <li className="flex items-start gap-2">
-                <span className="mt-1.5 text-white  rounded-full bg-buttonBackground">
-                  <Check size={18} strokeWidth={2.5} />
-                </span>
-                Expert sessions by Big 4 veterans
+              <span className="mt-1.5 text-white  rounded-full bg-buttonBackground">
+                <Check size={18} strokeWidth={2.5} />
+              </span>
+              Expert sessions by Big 4 veterans
             </li>
 
             <li className="flex items-start gap-2">
-                <span className="mt-1.5 text-white rounded-full bg-buttonBackground">
+              <span className="mt-1.5 text-white rounded-full bg-buttonBackground">
                 <Check size={18} strokeWidth={2.5} />
-                </span>
-                Panel discussion on Startup Funding & Compliance
+              </span>
+              Panel discussion on Startup Funding & Compliance
             </li>
 
             <li className="flex items-start gap-2">
-                <span className="mt-1.5 text-white rounded-full bg-buttonBackground">
+              <span className="mt-1.5 text-white rounded-full bg-buttonBackground">
                 <Check size={18} strokeWidth={2.5} />
-                </span>
-                Networking with 200+ industry professionals
+              </span>
+              Networking with 200+ industry professionals
             </li>
-            </ul>
-
+          </ul>
 
           <button className="text-sm font-medium self-start bg-white text-[#1a103d]  px-6 py-2 rounded-full hover:bg-gray-200 transition">
             Register Now

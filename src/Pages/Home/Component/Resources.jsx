@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ResourceCard from "../../../Components/Common/ResourceCard";
-
 import img1 from "../../../assets/trustedleading1.png";
 import img2 from "../../../assets/trustedleading1.png";
 import img3 from "../../../assets/trustedleading1.png";
@@ -12,7 +11,8 @@ const Resources = () => {
     Updates: [
       {
         image: img1,
-        title: "Form DPT-3 Filing Deadline: Avoid Penalties with Timely Compliance",
+        title:
+          "Form DPT-3 Filing Deadline: Avoid Penalties with Timely Compliance",
       },
       {
         image: img2,
@@ -20,7 +20,8 @@ const Resources = () => {
       },
       {
         image: img3,
-        title: "Karnataka Semiconductor Policy: Subsidies, Capex & ESDM Benefits",
+        title:
+          "Karnataka Semiconductor Policy: Subsidies, Capex & ESDM Benefits",
       },
     ],
     Blogs: [

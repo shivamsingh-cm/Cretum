@@ -1,11 +1,9 @@
-
-
-import Verticalserver1 from '../../../assets/verticalserver1.png'
-import Verticalserver2 from '../../../assets/verticalserver2.png'
-import Verticalserver3 from '../../../assets/verticalserver3.png'
-import Verticalserver4 from '../../../assets/verticalserver4.png'
-import Verticalserver5 from '../../../assets/verticalserver5.png'
-import Verticalserver6 from '../../../assets/verticalserver6.png'
+import Verticalserver1 from "../../../assets/verticalserver1.png";
+import Verticalserver2 from "../../../assets/verticalserver2.png";
+import Verticalserver3 from "../../../assets/verticalserver3.png";
+import Verticalserver4 from "../../../assets/verticalserver4.png";
+import Verticalserver5 from "../../../assets/verticalserver5.png";
+import Verticalserver6 from "../../../assets/verticalserver6.png";
 export default function Verticals() {
   const items = [
     { icon: Verticalserver1, label: "IT & Technology" },
@@ -26,19 +24,26 @@ export default function Verticals() {
 
         {/* Subtitle */}
         <p className="text-white font-normal text-sm md:text-base max-w-[700px] mx-auto mt-3">
-          We combine deep tax expertise with cutting-edge technology to deliver a seamless GST
-          experience that transforms compliance into strategic advantage.
+          We combine deep tax expertise with cutting-edge technology to deliver
+          a seamless GST experience that transforms compliance into strategic
+          advantage.
         </p>
 
         {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-14">
-          {items.map((item, index) => (
+          {items?.map((item, index) => (
             <div
               key={index}
               className=" bg-backgroundSecondary/40 backdrop-blur-xl border border-white/10 rounded-2xl p-3 flex flex-col items-center justify-center gap-4 transition-all duration-300 hover:scale-[1.03] hover:shadow-xl  hover:bg-backgroundSecondary/60 cursor-pointer"
             >
-              <img src={item.icon} alt={item.label} className="w-[140px] h-[140px] object-contain" />
-              <p className="text-white  text-xl md:text-2xl font-normal">{item.label}</p>
+              <img
+                src={item.icon}
+                alt={item.label}
+                className="w-[140px] h-[140px] object-contain"
+              />
+              <p className="text-white  text-xl md:text-2xl font-normal">
+                {item.label}
+              </p>
             </div>
           ))}
         </div>
@@ -46,7 +51,3 @@ export default function Verticals() {
     </section>
   );
 }
-
-
-
-

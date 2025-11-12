@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import MapBase from "../../../assets/mapbase.png";
 import DelhiImg from "../../../assets/contact.png";
@@ -86,7 +86,7 @@ const Locations = () => {
 
         {/* Accordion */}
         <div className="flex flex-col gap-4">
-          {locations.map((loc, index) => (
+          {locations?.map((loc, index) => (
             <div
               key={index}
               className={`rounded-xl border transition-all duration-300 ${
@@ -101,7 +101,7 @@ const Locations = () => {
                     : "bg-[#1e1630] hover:bg-[#2a1d47]"
                 }`}
               >
-                <span>{loc.city}</span>
+                <span>{loc?.city}</span>
                 {openIndex === index ? (
                   <ChevronUp size={18} />
                 ) : (
@@ -111,7 +111,7 @@ const Locations = () => {
 
               {openIndex === index && (
                 <div className="bg-[#1e1630] px-5 py-4 text-sm text-gray-300">
-                  {loc.address}
+                  {loc?.address}
                 </div>
               )}
             </div>

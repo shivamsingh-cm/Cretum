@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const ExperienceStats = () => {
   const stats = [
@@ -40,7 +40,7 @@ const ExperienceStats = () => {
 
       {/* Stats */}
       <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-12 text-center border-y border-white/10 py-10">
-        {stats.map((item, index) => (
+        {stats?.map((item, index) => (
           <StatCard
             key={index}
             number={item.number}

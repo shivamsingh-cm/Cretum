@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Modal from "../../../Components/ScheduleCall/Modal";
 import ScheduleCallForm from "../../../Components/ScheduleCall/ScheduleCallForm";
 const CtaBanner = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false); 
-  
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <section className="relative bg-[#9b5de5] overflow-hidden text-center text-white py-20 px-6 md:px-12">
       {/* Background Decorative Shapes */}
@@ -22,14 +22,15 @@ const CtaBanner = () => {
           Join hundreds of SME’s & <br className="hidden md:block" />
           grow fast with Cretum
         </h2>
-        <button 
-          onClick={()=> setIsModalOpen(true)}
-          className="bg-white text-black text-base font-medium px-6 py-2 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-sm">
+        <button
+          onClick={() => setIsModalOpen(true)}
+          className="bg-white text-black text-base font-medium px-6 py-2 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-sm"
+        >
           Schedule a Call
         </button>
       </div>
 
-       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+      <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
         <ScheduleCallForm onSubmit={() => setIsModalOpen(false)} />
       </Modal>
     </section>
