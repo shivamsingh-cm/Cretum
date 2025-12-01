@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowUpRight } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-import { blogApi } from '../../../api/blog';
-import TextTruncate from '../../../Components/Common/TextTruncates'
+import { useState, useEffect } from "react";
+import { ArrowUpRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { blogApi } from "../../../api/blog";
+import TextTruncate from "../../../Components/Common/TextTruncates";
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -15,22 +15,21 @@ const HeroSection = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        
+
         // Fetch first page to get recent blogs from API
         const response = await blogApi.fetchBlogs(1, 10);
-        
+
         // Use the recentBlogs provided by backend (most recent should be first)
-        if (response.recentBlogs && response.recentBlogs.length > 0) {
+        if (response?.recentBlogs && response?.recentBlogs.length > 0) {
           // Backend should return the most recent blog as first item
           setLatestBlog(response.recentBlogs[0]);
-        } else if (response.posts && response.posts.length > 0) {
+        } else if (response?.posts && response?.posts.length > 0) {
           // Fallback to regular posts if no recentBlogs
-          setLatestBlog(response.posts[0]);
+          setLatestBlog(response?.posts[0]);
         }
-        
       } catch (err) {
         setError(err.message);
-        console.error('Error fetching blogs:', err);
+        console.error("Error fetching blogs:", err);
       } finally {
         setLoading(false);
       }
@@ -78,24 +77,24 @@ const HeroSection = () => {
   return (
     <div className="min-h-screen bg-backgroundPrimary text-white py-16 px-4 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto">
-
         {/* Section Header */}
         <header className="text-center mb-16 sm:mb-20 mt-10">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-white mb-4">
             Blogs & Articles
           </h1>
           <p className="text-lg sm:text-lg font-normal text-gray-300 max-w-xl mx-auto">
-            Subscribe to learn about new product features, the latest in technology, solutions, and updates.
+            Subscribe to learn about new product features, the latest in
+            technology, solutions, and updates.
           </p>
         </header>
-        
+
         <p className="text-xl sm:text-2xl font-medium text-white mb-4 sm:mb-6">
           Recent blog posts
         </p>
 
         {/* Latest Blog Post Card */}
         <div className="bg-backgroundPrimaryDark rounded-xl p-6 sm:p-8 shadow-2xl">
-          <div 
+          <div
             className="flex flex-col lg:flex-row items-center lg:items-start gap-6 sm:gap-8 lg:gap-12 group transition duration-300 ease-in-out cursor-pointer"
             onClick={handleClick}
           >
@@ -106,9 +105,10 @@ const HeroSection = () => {
                   src={latestBlog.imageUrl}
                   alt={latestBlog.title}
                   className="w-full h-full object-cover transition duration-500 group-hover:scale-105"
-                  onError={(e) => { 
-                    e.target.onerror = null; 
-                    e.target.src="https://placehold.co/600x400/6b21a8/ffffff?text=Image+Unavailable"; 
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src =
+                      "https://placehold.co/600x400/6b21a8/ffffff?text=Image+Unavailable";
                   }}
                 />
               </div>
@@ -116,12 +116,11 @@ const HeroSection = () => {
 
             {/* Content Container (Right Column on Desktop) */}
             <div className="w-full lg:w-2/3 flex flex-col justify-center py-2">
-              
               {/* Tags */}
               {latestBlog.tags && latestBlog.tags.length > 0 && (
                 <div className="flex flex-wrap gap-2 mb-4">
                   {latestBlog.tags.slice(0, 2).map((tag, index) => (
-                    <span 
+                    <span
                       key={index}
                       className="inline-flex text-sm font-normal items-center rounded-full bg-buttonBackground px-3 py-1 text-purple-200"
                     >
@@ -138,8 +137,8 @@ const HeroSection = () => {
 
               {/* Title and Icon */}
               <div className="flex items-start justify-between mb-4">
-                <TextTruncate 
-                  as="h2" 
+                <TextTruncate
+                  as="h2"
                   lines={2}
                   className="text-xl sm:text-2xl lg:text-3xl font-medium text-gray-50 leading-snug transition duration-300 group-hover:text-purple-400 flex-1 mr-4"
                 >
@@ -150,7 +149,7 @@ const HeroSection = () => {
               </div>
 
               {/* Summary with dynamic line clamp */}
-              <TextTruncate 
+              <TextTruncate
                 lines={4}
                 className="text-lg sm:text-xl font-normal text-gray-300"
               >
@@ -159,7 +158,6 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-
       </div>
     </div>
   );

@@ -16,7 +16,6 @@ import RandomImage from "../../assets/randomblog.jpg";
 import { Helmet } from "react-helmet-async";
 import LoadingHandler from "../../Components/Common/LoadingHandler";
 
-// Reusable Components
 const ContentNavItem = ({ title, id }) => (
   <a
     href={`#${id}`}
@@ -29,6 +28,7 @@ const ContentNavItem = ({ title, id }) => (
   </a>
 );
 
+//contact form section 
 const ContactForm = () => {
   const IconInput = ({ item }) => {
     const { Icon, placeholder, type = "text" } = item;
@@ -164,7 +164,7 @@ const ShowBlog = () => {
 
         {/* dynamic seo tags uing react-helmet-async */}
         <Helmet>
-          <title>{seo.metaTitle || blogPost?.title || "Blog Post"}</title>
+          <title>{seo?.metaTitle || blogPost?.title || "Blog Post"}</title>
           <meta
             name="description"
             content={
@@ -173,16 +173,16 @@ const ShowBlog = () => {
               "Read our latest insights."
             }
           />
-          <meta name="keywords" content={seo.keyword || ""} />
+          <meta name="keywords" content={seo?.keyword || ""} />
 
           {/* open graph for social sharing */}
           <meta
             property="og:title"
-            content={seo.metaTitle || blogPost?.title}
+            content={seo?.metaTitle || blogPost?.title}
           />
           <meta
             property="og:description"
-            content={seo.metaDescription || blogPost?.summary}
+            content={seo?.metaDescription || blogPost?.summary}
           />
           <meta
             property="og:image"
@@ -194,11 +194,11 @@ const ShowBlog = () => {
           <meta name="twitter:card" content="summary_large_image" />
           <meta
             name="twitter:title"
-            content={seo.metaTitle || blogPost?.title}
+            content={seo?.metaTitle || blogPost?.title}
           />
           <meta
             name="twitter:description"
-            content={seo.metaDescription || blogPost?.summary}
+            content={seo?.metaDescription || blogPost?.summary}
           />
           <meta
             name="twitter:image"
@@ -295,7 +295,7 @@ const ShowBlog = () => {
                   <h3 className="text-xl font-bold text-purple-300 mb-3">
                     Summary
                   </h3>
-                  <p className="text-lg text-gray-200">{blogPost.summary}</p>
+                  <p className="text-lg text-gray-200">{blogPost?.summary}</p>
                 </div>
               )}
 
@@ -303,7 +303,7 @@ const ShowBlog = () => {
               {contentSections?.length > 0 ? (
                 contentSections?.map((section, index) => (
                   <section
-                    key={section.id || index}
+                    key={section?.id || index}
                     id={`section-${section.id || index}`}
                     className="scroll-mt-20"
                   >
@@ -311,8 +311,8 @@ const ShowBlog = () => {
                       {section?.title}
                     </h2>
                     <div className="prose prose-invert prose-purple max-w-none">
-                      {section.content && section.content.length > 0 ? (
-                        <BlocksRenderer content={section.content} />
+                      {section?.content && section?.content.length > 0 ? (
+                        <BlocksRenderer content={section?.content} />
                       ) : (
                         <p className="text-gray-400 italic">
                           No content available for this section.
@@ -325,7 +325,7 @@ const ShowBlog = () => {
                 /* Fallback to main content if no contentSections */
                 <div className="prose prose-invert prose-purple max-w-none">
                   {blogPost?.content && blogPost?.content?.length > 0 ? (
-                    <BlocksRenderer content={blogPost.content} />
+                    <BlocksRenderer content={blogPost?.content} />
                   ) : (
                     <div className="text-center py-12">
                       <p className="text-gray-400 text-lg">

@@ -27,7 +27,7 @@ const Index = () => {
   };
 
   return (
-    <div className="min-h-screen bg-backgroundPrimary">
+    <div className="min-h-screen">
       <HeroSection
         onViewJobsClick={scrollToJobs}
         onLearnAboutClick={scrollToAboutUs}

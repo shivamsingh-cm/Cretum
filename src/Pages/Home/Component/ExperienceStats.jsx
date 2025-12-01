@@ -29,7 +29,7 @@ const ExperienceStats = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-backgroundPrimary text-white py-16 px-6 md:px-12 lg:px-20"
+      className=" text-black py-16 px-6 md:px-12 lg:px-20"
     >
       {/* Heading */}
       <div className="text-center mb-12">
@@ -39,7 +39,7 @@ const ExperienceStats = () => {
       </div>
 
       {/* Stats */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-12 text-center border-y border-white/10 py-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-12 text-center border-y border-gray-200 py-10">
         {stats?.map((item, index) => (
           <StatCard
             key={index}
@@ -80,11 +80,11 @@ const StatCard = ({ number, label, suffix, animate }) => {
 
   return (
     <div>
-      <h3 className="text-4xl md:text-5xl font-bold text-purple-400 mb-2">
+      <h3 className="text-4xl md:text-5xl font-bold text-black mb-2">
         {count}
         {suffix}
       </h3>
-      <p className="text-sm md:text-base text-gray-300 uppercase tracking-wide">
+      <p className="text-sm md:text-base text-gray-500 uppercase tracking-wide">
         {label}
       </p>
     </div>

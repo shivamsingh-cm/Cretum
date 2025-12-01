@@ -19,7 +19,7 @@ const PageNotFound = () => {
       </p>
 
       <button
-        onClick={() => navigate("/home")}
+        onClick={() => navigate("/")}
         className="flex items-center gap-2 bg-gradient-to-r from-buttonBackground to-pink-500 hover:from-buttonBackgroundHover hover:to-pink-600 transition-all px-6 py-3 rounded-full text-white font-medium shadow-lg hover:shadow-xl"
       >
         <Home size={18} />

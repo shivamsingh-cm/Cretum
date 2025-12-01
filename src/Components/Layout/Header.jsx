@@ -1,4 +1,215 @@
-import React, { useState, useRef, useEffect } from "react";
+// import { useState, useRef, useEffect } from "react";
+// import { Menu, X, ChevronDown } from "lucide-react";
+// import { NavLink, useNavigate } from "react-router-dom";
+// import Logo from "../../assets/Logo.png";
+// import Modal from "../../Components/ScheduleCall/Modal";
+// import ScheduleCallForm from "../../Components/ScheduleCall/ScheduleCallForm";
+
+// const Header = () => {
+//   const [isOpen, setIsOpen] = useState(false); // mobile menu
+//   const [isModalOpen, setIsModalOpen] = useState(false);
+//   const [isDesktopResourceOpen, setIsDesktopResourceOpen] = useState(false);
+//   const [isMobileResourceOpen, setIsMobileResourceOpen] = useState(false);
+//   const dropdownRef = useRef(null);
+//   const navigate = useNavigate();
+
+//   const navItems = [
+//     { name: "Home", to: "/" },
+//     { name: "Service", to: "cfoService" },
+//     { name: "Service1", to: "incometaxservice" },
+//     { name: "Service2", to: "gstcomplianceadvisory" },
+//     { name: "Resources", to: "", dropdown: true },
+//     { name: "AboutUs", to: "/about" },
+//     { name: "Career", to: "/career" },
+//     { name: "Contact Us", to: "/contact" },
+//   ];
+
+//   const resourceItems = [
+//     { name: "Events & Workshops", to: "/workshops" },
+//     { name: "Blog", to: "/blog" },
+//     { name: "News", to: "/news" },
+//   ];
+
+//   // Close desktop dropdown when clicking outside
+//   useEffect(() => {
+//     const handleClickOutside = (event) => {
+//       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+//         setIsDesktopResourceOpen(false);
+//       }
+//     };
+//     document.addEventListener("mousedown", handleClickOutside);
+//     return () => document.removeEventListener("mousedown", handleClickOutside);
+//   }, []);
+
+//   return (
+//     <header className="fixed top-0 left-0 w-full bg-backgroundPrimary text-white z-50 shadow-lg">
+//       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+//         {/* Left Side: Logo + Navigation */}
+//         <div className="flex items-center space-x-8">
+//           {/* Logo */}
+//           <div
+//             onClick={() => navigate("/")}
+//             className="flex items-center space-x-2 hover:cursor-pointer"
+//           >
+//             <img src={Logo} alt="Logo" />
+//           </div>
+
+//           {/* Desktop Nav */}
+//           <nav className="hidden lg:flex items-center space-x-8 relative">
+//             {navItems.map((item) =>
+//               item.dropdown ? (
+//                 <div key={item.name} className="relative" ref={dropdownRef}>
+//                   <button
+//                     onClick={() =>
+//                       setIsDesktopResourceOpen(!isDesktopResourceOpen)
+//                     }
+//                     className="flex items-center space-x-1 text-gray-300 hover:text-white transition"
+//                   >
+//                     <span>{item.name}</span>
+//                     <ChevronDown
+//                       className={`w-4 h-4 transition-transform duration-200 ${
+//                         isDesktopResourceOpen ? "rotate-180" : ""
+//                       }`}
+//                     />
+//                   </button>
+
+//                   {/* Desktop Dropdown */}
+//                   {isDesktopResourceOpen && (
+//                     <div className="absolute left-0 mt-3 w-56 bg-[#2b1f3f] border border-purple-800 rounded-lg shadow-lg py-2">
+//                       {resourceItems.map((subItem) => (
+//                         <NavLink
+//                           key={subItem.name}
+//                           to={subItem.to}
+//                           className={({ isActive }) =>
+//                             isActive
+//                               ? "block px-4 py-2 text-white bg-purple-800 rounded transition"
+//                               : "block px-4 py-2 text-gray-300 hover:text-white hover:bg-purple-700/40 transition"
+//                           }
+//                           onClick={() => setIsDesktopResourceOpen(false)}
+//                         >
+//                           {subItem.name}
+//                         </NavLink>
+//                       ))}
+//                     </div>
+//                   )}
+//                 </div>
+//               ) : (
+//                 <NavLink
+//                   key={item.name}
+//                   to={item.to}
+//                   className={({ isActive }) =>
+//                     isActive
+//                       ? "text-white border-b-2 border-white pb-1 transition"
+//                       : "text-gray-300 hover:text-white transition"
+//                   }
+//                 >
+//                   {item.name}
+//                 </NavLink>
+//               )
+//             )}
+//           </nav>
+//         </div>
+
+//         {/* Right Side: Schedule Button */}
+//         <div className="flex items-center space-x-4">
+//           {/* Schedule Button */}
+//           <button
+//             onClick={() => setIsModalOpen(true)}
+//             className="hidden lg:block bg-white text-[#151021] font-medium px-5 py-2 rounded-full shadow hover:bg-gray-200 transition"
+//           >
+//             Schedule a Call
+//           </button>
+
+//           {/* Hamburger Menu */}
+//           <button
+//             onClick={() => setIsOpen(!isOpen)}
+//             className="lg:hidden text-white focus:outline-none"
+//           >
+//             {isOpen ? <X size={28} /> : <Menu size={28} />}
+//           </button>
+//         </div>
+//       </div>
+
+//       {/* Mobile Menu */}
+//       <div
+//         className={`lg:hidden bg-[#1d162b] overflow-hidden transition-all duration-300 ${
+//           isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+//         }`}
+//       >
+//         <div className="px-6 pb-4 space-y-3">
+//           {navItems.map((item) =>
+//             item.dropdown ? (
+//               <div key={item.name} className="space-y-2">
+//                 <button
+//                   onClick={() => setIsMobileResourceOpen(!isMobileResourceOpen)}
+//                   className="w-full flex justify-between items-center text-gray-300 hover:text-white font-medium transition"
+//                 >
+//                   <span>{item.name}</span>
+//                   <ChevronDown
+//                     className={`w-5 h-5 transition-transform ${
+//                       isMobileResourceOpen ? "rotate-180" : ""
+//                     }`}
+//                   />
+//                 </button>
+
+//                 {/* Mobile Dropdown */}
+//                 {isMobileResourceOpen && (
+//                   <div className="pl-4 space-y-2">
+//                     {resourceItems.map((subItem) => (
+//                       <button
+//                         key={subItem.name}
+//                         className="w-full text-left text-sm text-gray-400 hover:text-white transition"
+//                         onClick={() => {
+//                           navigate(subItem.to);
+//                           setIsOpen(false);
+//                           setIsMobileResourceOpen(false);
+//                         }}
+//                       >
+//                         {subItem.name}
+//                       </button>
+//                     ))}
+//                   </div>
+//                 )}
+//               </div>
+//             ) : (
+//               <NavLink
+//                 key={item.name}
+//                 to={item.to}
+//                 className={({ isActive }) =>
+//                   isActive
+//                     ? "block text-white font-medium transition"
+//                     : "block text-gray-300 hover:text-white transition"
+//                 }
+//                 onClick={() => setIsOpen(false)}
+//               >
+//                 {item.name}
+//               </NavLink>
+//             )
+//           )}
+
+//           <button
+//             onClick={() => {
+//               setIsOpen(false);
+//               setIsModalOpen(true);
+//             }}
+//             className="w-full mt-3 bg-white text-[#151021] font-medium py-2 rounded-full hover:bg-gray-200 transition"
+//           >
+//             Schedule a Call
+//           </button>
+//         </div>
+//       </div>
+
+//       {/* Modal */}
+//       <Modal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)}>
+//         <ScheduleCallForm onSubmit={() => setIsModalOpen(false)} />
+//       </Modal>
+//     </header>
+//   );
+// };
+
+// export default Header;
+
+import { useState, useRef, useEffect } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { NavLink, useNavigate } from "react-router-dom";
 import Logo from "../../assets/Logo.png";
@@ -8,30 +219,44 @@ import ScheduleCallForm from "../../Components/ScheduleCall/ScheduleCallForm";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false); // mobile menu
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDesktopServiceOpen, setIsDesktopServiceOpen] = useState(false);
   const [isDesktopResourceOpen, setIsDesktopResourceOpen] = useState(false);
+  const [isMobileServiceOpen, setIsMobileServiceOpen] = useState(false);
   const [isMobileResourceOpen, setIsMobileResourceOpen] = useState(false);
-  const dropdownRef = useRef(null);
+
+  const serviceRef = useRef(null);
+  const resourceRef = useRef(null);
   const navigate = useNavigate();
 
   const navItems = [
     { name: "Home", to: "/" },
-    { name: "Solutions", to: "/solutions" },
-    { name: "Resources", to: "", dropdown: true },
-    { name: "AboutUs", to: "/about" },
+    { name: "Service", to: "", dropdown: true, type: "service" },
+    { name: "Resources", to: "", dropdown: true, type: "resource" },
+    { name: "About Us", to: "/about-us" },
     { name: "Career", to: "/career" },
-    { name: "Contact Us", to: "/contact" },
+    { name: "Contact Us", to: "/contact-us" },
+  ];
+
+  const serviceItems = [
+    { name: "CFO Service", to: "/services/cfo-services" },
+    { name: "GST Service", to: "/services/gst-services" },
+    { name: "Startup Consulting", to: "/services/startup-consulting"},
+    { name: "Income Tax Service", to: "/services/income-tax-services" },
   ];
 
   const resourceItems = [
-    { name: "Events & Workshops", to: "/workshops" },
+    { name: "Events & Workshops", to: "/events" },
     { name: "Blog", to: "/blog" },
     { name: "News", to: "/news" },
   ];
 
-  // Close desktop dropdown when clicking outside
+  // Close desktop dropdowns when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      if (serviceRef.current && !serviceRef.current.contains(event.target)) {
+        setIsDesktopServiceOpen(false);
+      }
+      if (resourceRef.current && !resourceRef.current.contains(event.target)) {
         setIsDesktopResourceOpen(false);
       }
     };
@@ -56,34 +281,55 @@ const Header = () => {
           <nav className="hidden lg:flex items-center space-x-8 relative">
             {navItems.map((item) =>
               item.dropdown ? (
-                <div key={item.name} className="relative" ref={dropdownRef}>
+                <div
+                  key={item.name}
+                  className="relative"
+                  ref={item.type === "service" ? serviceRef : resourceRef}
+                >
                   <button
                     onClick={() =>
-                      setIsDesktopResourceOpen(!isDesktopResourceOpen)
+                      item.type === "service"
+                        ? setIsDesktopServiceOpen(!isDesktopServiceOpen)
+                        : setIsDesktopResourceOpen(!isDesktopResourceOpen)
                     }
                     className="flex items-center space-x-1 text-gray-300 hover:text-white transition"
                   >
                     <span>{item.name}</span>
                     <ChevronDown
                       className={`w-4 h-4 transition-transform duration-200 ${
-                        isDesktopResourceOpen ? "rotate-180" : ""
+                        (
+                          item.type === "service"
+                            ? isDesktopServiceOpen
+                            : isDesktopResourceOpen
+                        )
+                          ? "rotate-180"
+                          : ""
                       }`}
                     />
                   </button>
 
                   {/* Desktop Dropdown */}
-                  {isDesktopResourceOpen && (
+                  {(item.type === "service"
+                    ? isDesktopServiceOpen
+                    : isDesktopResourceOpen) && (
                     <div className="absolute left-0 mt-3 w-56 bg-[#2b1f3f] border border-purple-800 rounded-lg shadow-lg py-2">
-                      {resourceItems.map((subItem) => (
+                      {(item.type === "service"
+                        ? serviceItems
+                        : resourceItems
+                      ).map((subItem) => (
                         <NavLink
                           key={subItem.name}
                           to={subItem.to}
                           className={({ isActive }) =>
                             isActive
-                              ? "block px-4 py-2 text-white bg-purple-800 rounded transition"
+                              ? "block px-4 py-2 text-white bg-purple-700 rounded transition"
                               : "block px-4 py-2 text-gray-300 hover:text-white hover:bg-purple-700/40 transition"
                           }
-                          onClick={() => setIsDesktopResourceOpen(false)}
+                          onClick={() =>
+                            item.type === "service"
+                              ? setIsDesktopServiceOpen(false)
+                              : setIsDesktopResourceOpen(false)
+                          }
                         >
                           {subItem.name}
                         </NavLink>
@@ -110,7 +356,6 @@ const Header = () => {
 
         {/* Right Side: Schedule Button */}
         <div className="flex items-center space-x-4">
-          {/* Schedule Button */}
           <button
             onClick={() => setIsModalOpen(true)}
             className="hidden lg:block bg-white text-[#151021] font-medium px-5 py-2 rounded-full shadow hover:bg-gray-200 transition"
@@ -118,7 +363,6 @@ const Header = () => {
             Schedule a Call
           </button>
 
-          {/* Hamburger Menu */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="lg:hidden text-white focus:outline-none"
@@ -131,7 +375,7 @@ const Header = () => {
       {/* Mobile Menu */}
       <div
         className={`lg:hidden bg-[#1d162b] overflow-hidden transition-all duration-300 ${
-          isOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          isOpen ? "max-h-[600px] opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="px-6 pb-4 space-y-3">
@@ -140,29 +384,43 @@ const Header = () => {
               <div key={item.name} className="space-y-2">
                 <button
                   onClick={() =>
-                    setIsMobileResourceOpen(!isMobileResourceOpen)
+                    item.type === "service"
+                      ? setIsMobileServiceOpen(!isMobileServiceOpen)
+                      : setIsMobileResourceOpen(!isMobileResourceOpen)
                   }
                   className="w-full flex justify-between items-center text-gray-300 hover:text-white font-medium transition"
                 >
                   <span>{item.name}</span>
                   <ChevronDown
                     className={`w-5 h-5 transition-transform ${
-                      isMobileResourceOpen ? "rotate-180" : ""
+                      item.type === "service"
+                        ? isMobileServiceOpen
+                          ? "rotate-180"
+                          : ""
+                        : isMobileResourceOpen
+                        ? "rotate-180"
+                        : ""
                     }`}
                   />
                 </button>
 
-                {/* Mobile Dropdown */}
-                {isMobileResourceOpen && (
+                {(item.type === "service"
+                  ? isMobileServiceOpen
+                  : isMobileResourceOpen) && (
                   <div className="pl-4 space-y-2">
-                    {resourceItems.map((subItem) => (
+                    {(item.type === "service"
+                      ? serviceItems
+                      : resourceItems
+                    ).map((subItem) => (
                       <button
                         key={subItem.name}
                         className="w-full text-left text-sm text-gray-400 hover:text-white transition"
                         onClick={() => {
                           navigate(subItem.to);
                           setIsOpen(false);
-                          setIsMobileResourceOpen(false);
+                          item.type === "service"
+                            ? setIsMobileServiceOpen(false)
+                            : setIsMobileResourceOpen(false);
                         }}
                       >
                         {subItem.name}
@@ -208,8 +466,3 @@ const Header = () => {
 };
 
 export default Header;
-
-
-
-
-

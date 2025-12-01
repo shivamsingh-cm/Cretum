@@ -2,10 +2,10 @@ import { useEffect, useRef, useState } from "react";
 
 const ExperienceStats = () => {
   const stats = [
-    { number: 500, label: "GST REFUNDS SECURED", suffix: "Cr+" },
+    { number: 500, label: "GST REFUNDS SECURED", suffix: "Cr+", icon: "₹" },
     { number: 98, label: "AUDIT SUCCESS RATE", suffix: "%" },
-    { number: 500, label: "BUSINESSES SERVED", suffix: "+" },
-    { number: 100, label: "COMPLIANCE ACCURACY", suffix: "%" },
+    { number: 100, label: "BUSINESSES SERVED", suffix: "+" },
+    { number: 99, label: "COMPLIANCE ACCURACY", suffix: "%" },
   ];
 
   const [visible, setVisible] = useState(false);
@@ -30,7 +30,7 @@ const ExperienceStats = () => {
   return (
     <section
       ref={sectionRef}
-      className="bg-backgroundPrimary text-white py-16 px-6 md:px-12 lg:px-20"
+      className=" py-16 px-6 md:px-12 lg:px-20"
     >
       {/* Heading */}
       <div className="text-center mb-12">
@@ -40,13 +40,14 @@ const ExperienceStats = () => {
       </div>
 
       {/* Stats */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-4 gap-12 text-center border-y border-white/10 py-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-4 gap-12 text-center border-y border-gray-300 py-10">
         {stats.map((item, index) => (
           <StatCard
             key={index}
             number={item.number}
             label={item.label}
             suffix={item.suffix}
+            icon={item.icon}
             animate={visible}
           />
         ))}
@@ -55,7 +56,7 @@ const ExperienceStats = () => {
   );
 };
 
-const StatCard = ({ number, label, suffix, animate }) => {
+const StatCard = ({ number, label, suffix, icon, animate }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -82,10 +83,11 @@ const StatCard = ({ number, label, suffix, animate }) => {
   return (
     <div>
       <h3 className="text-4xl md:text-5xl font-bold text-purple-400 mb-2">
+        {icon && <span className="text-purple-400">{icon}</span>}
         {count}
         {suffix}
       </h3>
-      <p className="text-sm md:text-base text-gray-300 uppercase tracking-wide">
+      <p className="text-sm md:text-base text-gray-500 uppercase tracking-wide">
         {label}
       </p>
     </div>

@@ -11,14 +11,14 @@ const TrustedAdvisors = () => {
   };
 
   return (
-    <section className="bg-backgroundPrimary text-white  py-16 px-6 md:px-12 lg:px-20">
+    <section className=" text-black  py-16 px-6 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
         <div className="text-center mb-10 sm:mb-12 px-2">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold leading-snug">
             Meet our Experts & Trusted Advisors
             <br className="hidden sm:block" />
-            <span className="text-gray-300 font-normal">
+            <span className="text-black font-normal">
               for Your Growing Business
             </span>
           </h2>
@@ -27,7 +27,7 @@ const TrustedAdvisors = () => {
         {/* Cards Section */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16">
           {/* Card 1 */}
-          <div className="relative rounded-2xl overflow-hidden shadow-lg group h-[380px] sm:h-[420px] lg:h-[460px] hover:scale-[1.02] transition-transform duration-300">
+          <div className="relative rounded-2xl overflow-hidden shadow-lg group min-h-[420px] sm:min-h-[460px] hover:scale-[1.02] transition-transform duration-300">
             <img
               src={advisor1}
               alt="Advisor"
@@ -37,7 +37,7 @@ const TrustedAdvisors = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-b from-backgroundPrimary/80 via-backgroundPrimary/50 to-transparent"></div>
             <div className="absolute top-0 p-5 sm:p-6 md:p-8">
-              <h3 className="text-base sm:text-lg md:text-2xl font-normal mb-2">
+              <h3 className="text-base text-white sm:text-lg md:text-2xl font-normal mb-2">
                 Tangled in Tax Laws or Buried in Paperwork?
               </h3>
               <p className="text-gray-300 text-xs md:text-sm leading-relaxed">
@@ -46,18 +46,25 @@ const TrustedAdvisors = () => {
             </div>
           </div>
 
-          {/* Card 2 */}
-          <div className="relative flex flex-col bg-gradient-to-b from-[#4b2c85]/80 via-[#1e1630]/90 to-[#151021]/90 rounded-2xl shadow-lg overflow-hidden hover:scale-[1.02] transition-transform duration-300 p-5 sm:p-6 md:p-8 min-h-[400px] sm:min-h-[440px] lg:h-[460px]">
-            <div>
-              <h3 className="text-base sm:text-lg md:text-2xl font-normal mb-2">
+          {/* Card 2 — already responsive */}
+          <div
+            className="relative flex flex-col rounded-2xl shadow-lg overflow-hidden hover:scale-[1.02] transition-transform duration-300 p-5 sm:p-6 md:p-8 min-h-[420px] sm:min-h-[460px] bg-cover bg-center"
+            style={{
+              backgroundImage:
+                "url('https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1200&auto=format&fit=crop')",
+            }}
+          >
+            <div className="absolute inset-0 bg-black/60"></div>
+            <div className="relative z-10">
+              <h3 className="text-base sm:text-lg md:text-2xl font-normal mb-2 text-white">
                 Personalized Solutions Designed For You
               </h3>
-              <p className="text-gray-300 text-xs sm:text-sm mb-6">
+              <p className="text-gray-200 text-xs sm:text-sm mb-6">
                 Choose the services according to your business needs.
               </p>
             </div>
 
-            <div className="flex-1 overflow-visible space-y-3 mt-auto">
+            <div className="relative z-10 flex-1 space-y-3 mt-auto">
               {[
                 "Startup Compliance Kit",
                 "CFO on Call",
@@ -66,9 +73,9 @@ const TrustedAdvisors = () => {
               ].map((service, index) => (
                 <button
                   key={index}
-                  className="w-full flex items-center justify-start gap-3 bg-buttonBackground hover:bg-buttonBackgroundHover text-white text-xs sm:text-sm rounded-full px-4 sm:px-5 py-2.5 sm:py-3 transition-all duration-300 border border-white/20 backdrop-blur-sm"
+                  className="w-full flex items-center justify-start gap-3 bg-backgroundPrimary/60 hover:bg-white/25 text-white text-xs sm:text-sm rounded-full px-4 sm:px-5 py-2.5 sm:py-3 transition-all duration-300 border border-white/20 backdrop-blur-sm"
                 >
-                  <span className="flex items-center justify-center bg-white/15 rounded-full p-1.5 sm:p-2">
+                  <span className="flex items-center justify-center bg-white/20 rounded-full p-1.5 sm:p-2">
                     <CheckCircle2
                       size={18}
                       className="sm:size-[22px] text-white"
@@ -81,7 +88,7 @@ const TrustedAdvisors = () => {
           </div>
 
           {/* Card 3 */}
-          <div className="relative rounded-2xl overflow-hidden shadow-lg group h-[380px] sm:h-[420px] lg:h-[460px] hover:scale-[1.02] transition-transform duration-300">
+          <div className="relative rounded-2xl overflow-hidden shadow-lg group min-h-[420px] sm:min-h-[460px] hover:scale-[1.02] transition-transform duration-300">
             <img
               src={advisor2}
               alt="Advisor"
@@ -91,7 +98,7 @@ const TrustedAdvisors = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-b from-backgroundPrimary/80 via-backgroundPrimary/50 to-transparent"></div>
             <div className="absolute top-0 p-5 sm:p-6 md:p-8">
-              <h3 className="text-base sm:text-lg md:text-2xl font-normal mb-2">
+              <h3 className="text-base text-white sm:text-lg md:text-2xl font-normal mb-2">
                 Advice, Anytime, Anywhere
               </h3>
               <p className="text-gray-300 text-xs sm:text-sm md:text-sm leading-relaxed">
@@ -106,7 +113,7 @@ const TrustedAdvisors = () => {
           <h4 className="text-sm sm:text-base text-purple-400 uppercase tracking-widest">
             About CRETUM
           </h4>
-          <p className="text-gray-300 text-sm sm:text-2xl font-medium leading-relaxed">
+          <p className=" text-sm sm:text-2xl text-black font-normal leading-relaxed">
             Cretum is a boutique financial consulting firm founded by former Big
             4 executives. We provide end-to-end solutions across Business
             Consulting, Tax & GST Advisory, Litigation, Audit, CFO Services,
@@ -114,7 +121,7 @@ const TrustedAdvisors = () => {
           </p>
           <button
             onClick={handleReadMoreClick}
-            className="border border-white/30 hover:bg-white hover:text-black px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm transition-all duration-300"
+            className="border border-slate-400 hover:bg-white hover:text-black px-4 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm transition-all duration-300"
           >
             Read More
           </button>

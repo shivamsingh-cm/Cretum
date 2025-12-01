@@ -3,12 +3,11 @@ import { useNavigate } from "react-router-dom";
 
 const CtaBanner = () => {
   const navigate = useNavigate();
-  const viewOpportunitiesClick = ()=>{
-    navigate('/alljoblist')
-  }
+  const viewOpportunitiesClick = () => {
+    navigate("/career/all-job-list");
+  };
   return (
     <section className="relative bg-buttonBackground overflow-hidden text-center text-white py-20 px-6 md:px-12">
-      
       {/* Background Decorative Shapes */}
       <div className="absolute inset-0">
         {/* Left curved shape */}
@@ -25,10 +24,13 @@ const CtaBanner = () => {
           Roles We’re Hiring For
         </h2>
         <p className="text-white/90 text-base md:text-base font-normal leading-relaxed">
-          Write to us at&nbsp;<span className="underline">careers@cretumadvisory.com</span>&nbsp;to explore <br/> opportunities at Uniqus and elevate your professional journey.
+          Write to us at&nbsp;
+          <span className="underline">careers@cretumadvisory.com</span>&nbsp;to
+          explore <br /> opportunities at Uniqus and elevate your professional
+          journey.
         </p>
-        <button 
-        onClick={viewOpportunitiesClick}
+        <button
+          onClick={viewOpportunitiesClick}
           className="bg-white text-black font-medium px-6 py-2 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-sm"
         >
           View Opportunities
@@ -39,5 +41,3 @@ const CtaBanner = () => {
 };
 
 export default CtaBanner;
-
-

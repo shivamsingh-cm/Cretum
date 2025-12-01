@@ -1,5 +1,3 @@
-import React from "react";
-
 const ResourceCard = ({ image, title }) => {
   return (
     <div className="bg-white/5 rounded-xl overflow-hidden shadow-lg hover:scale-[1.02] transition-transform duration-300">

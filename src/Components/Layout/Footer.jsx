@@ -47,10 +47,10 @@ const Footer = () => {
             </h3>
             <ul className="space-y-2 text-sm font-normal">
               {[
-                { label: "About Us", to: "/about" },
-                { label: "Services", to: "/services" },
-                { label: "Resources", to: "/resources" },
-                { label: "Contact", to: "/contact" },
+                { label: "About Us", to: "/about-us" },
+                { label: "Services", to: "/services/gst-services" },
+                { label: "Resources", to: "/events" },
+                { label: "Contact", to: "/contact-us" },
                 { label: "Careers", to: "/career" },
               ].map((link) => (
                 <li key={link.to}>
@@ -70,16 +70,16 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4 text-sm">SERVICES</h3>
             <ul className="space-y-2 text-sm">
               {[
-                { label: "GST Services", to: "/gstservices" },
+                { label: "GST Services", to: "/services/gst-services" },
+                { label: "CFO Service", to: "/services/cfo-services" },
                 {
-                  label: "GST Compliance Advisory",
-                  to: "/gstcomplianceadvisory",
+                  label: "Income Tax Service",
+                  to: "/services/income-tax-services",
                 },
-                { label: "Startup Consulting", to: "/startupconsulting" },
-                { label: "US International Desk", to: "/usinternationaldesk" },
+                { label: "US International Desk", to: "/tax/usa-desk" },
                 {
                   label: "UAE International Desk",
-                  to: "/uaeinternationaldesk",
+                  to: "/tax/uae-desk",
                 },
               ].map((link) => (
                 <li key={link.to}>
@@ -134,13 +134,13 @@ const Footer = () => {
           <p>© 2025 Cretum Advisory. All rights reserved.</p>
           <div className="flex space-x-6">
             <Link
-              to="/privacypolicy"
+              to="/privacy-policy"
               className="relative hover:text-white transition-colors duration-200 after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:w-0 after:h-[1px] after:bg-[#A164FF] hover:after:w-full after:transition-all after:duration-300"
             >
               Privacy Policy
             </Link>
             <Link
-              to="/termsofuse"
+              to="/terms-of-use"
               className="relative hover:text-white transition-colors duration-200 after:content-[''] after:absolute after:left-0 after:-bottom-0.5 after:w-0 after:h-[1px] after:bg-[#A164FF] hover:after:w-full after:transition-all after:duration-300"
             >
               Terms of Use

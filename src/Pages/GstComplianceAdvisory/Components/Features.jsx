@@ -87,7 +87,9 @@ const Features = () => {
       <div className="max-w-[1200px] mx-auto px-5">
         {/* Section Heading */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-medium mb-3 text-white">Features</h2>
+          <h2 className="text-4xl font-medium mb-3 text-white">
+            What Makes Our Platform Different?
+          </h2>
           <p className="text-gray-300 max-w-[600px] font-normal mx-auto text-base">
             We combine deep tax expertise with cutting-edge technology to
             deliver a seamless GST experience that transforms compliance into
